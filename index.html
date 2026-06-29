@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Miguel Alejandro | Desarrollador Software</title>
+  <meta name="description" content="Portafolio técnico de Miguel Alejandro — Desarrollador Software orientado a soluciones web escalables con JavaScript y Python. Infraestructura Linux, ciencia de datos y ciberseguridad.">
+  <meta name="author" content="Miguel Alejandro">
+  <meta property="og:title" content="Miguel Alejandro | Software Developer">
+  <meta property="og:description" content="Desarrollador Software orientado a la construcción de soluciones web escalables y eficientes. Ecosistema JavaScript, Python y administración Linux.">
+  <meta property="og:type" content="website">
+
+  <!-- Preconnect fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient background orbs -->
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       CURSOR GLOW – injected by JS
+       =========================================================  -->
+
+  <!-- =========================================================
+       HEADER / NAV
+       ========================================================= -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="#hero" class="logo">MIGUEL<span>.DEV</span></a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#stack">Ecosistema</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#intereses">Intereses</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+  <section class="hero" id="hero" aria-label="Presentación">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+    <div class="container hero-content">
+      <!-- Columna Izquierda: Texto -->
+      <div class="hero-text-wrapper">
+        <div class="hero-badge">
+          <span class="dot" aria-hidden="true"></span>
+          Disponible para proyectos
+        </div>
+
+        <h1>
+          <span class="word" style="animation-delay:0.15s">Construyo</span>
+          <span class="word" style="animation-delay:0.28s">software</span><br>
+          <span class="gradient-text">
+            <span class="word" style="animation-delay:0.42s">eficiente</span>
+            <span class="word" style="animation-delay:0.55s">y</span>
+            <span class="word" style="animation-delay:0.65s">elegante.</span>
+          </span>
+        </h1>
+
+        <p>
+          Desarrollador orientado a soluciones web <strong>escalables y eficientes</strong>.
+          Ecosistema JavaScript para arquitectura frontend, Python para scripting y
+          lógica de datos — con visión hacia <strong>Ciencia de Datos</strong> y <strong>Ciberseguridad</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a href="mailto:alejandro182026@gmail.com" class="btn-primary" id="btn-cv">
+            <span>Solicitar CV técnico</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="https://github.com/alejandro-xoxo" target="_blank" rel="noopener" class="btn-ghost" id="btn-github-hero">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      
+      <!-- Columna Derecha: Imagen -->
+      <div class="hero-image-wrapper">
+        <img src="yo.png" alt="Miguel Alejandro" class="hero-profile-img">
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- =========================================================
+         SOBRE MÍ
+         ========================================================= -->
+    <section id="sobre-mi" aria-labelledby="about-title">
+      <div class="container">
+        <span class="section-label reveal">Sobre mí</span>
+        <div class="about-grid">
+          <div class="about-text">
+            <h2 class="section-title reveal" id="about-title">
+              Código limpio.<br>Soluciones reales.
+            </h2>
+            <p class="reveal reveal-delay-1">
+              Soy <strong>Miguel Alejandro</strong>, desarrollador de software orientado
+              a la construcción de soluciones web <strong>escalables y eficientes</strong>.
+              Especializado en el ecosistema <strong>JavaScript (ES6+)</strong> para arquitectura
+              frontend y <strong>Python 3</strong> para scripting y lógica de datos.
+            </p>
+            <p class="reveal reveal-delay-2">
+              Soy usuario entusiasta de <strong>Linux</strong> — mi entorno de desarrollo
+              nativo. Automatizo flujos de trabajo, configuro el sistema a bajo nivel
+              y optimizo cada herramienta para que el código fluya sin fricción.
+            </p>
+            <div class="method-list reveal reveal-delay-3">
+              <div class="method-item">
+                <span class="method-check" aria-hidden="true">✓</span>
+                Control de versiones estricto en cada proyecto
+              </div>
+              <div class="method-item">
+                <span class="method-check" aria-hidden="true">✓</span>
+                Código nativo antes de frameworks externos
+              </div>
+              <div class="method-item">
+                <span class="method-check" aria-hidden="true">✓</span>
+                Arquitectura orientada a resolución de problemas reales de negocio
+              </div>
+              <div class="method-item">
+                <span class="method-check" aria-hidden="true">✓</span>
+                Documentación y diseño README-driven
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card reveal reveal-delay-1">
+              <div class="stat-number" data-count="4" data-suffix="+">4+</div>
+              <div class="stat-label">Repositorios destacados</div>
+            </div>
+            <div class="stat-card reveal reveal-delay-2">
+              <div class="stat-number" data-count="3" data-suffix="">3</div>
+              <div class="stat-label">Lenguajes core</div>
+            </div>
+            <div class="stat-card reveal reveal-delay-3">
+              <div class="stat-number" data-count="2" data-suffix="+">2+</div>
+              <div class="stat-label">OS administrados</div>
+            </div>
+            <div class="stat-card reveal reveal-delay-4">
+              <div class="stat-number" data-count="1" data-suffix="">1</div>
+              <div class="stat-label">Hackathon 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TECH STACK
+         ========================================================= -->
+    <section id="stack" aria-labelledby="stack-title">
+      <div class="container">
+        <span class="section-label reveal">Ecosistema</span>
+        <h2 class="section-title reveal" id="stack-title">Stack técnico.</h2>
+        <p class="section-subtitle reveal reveal-delay-1">
+          Las herramientas y tecnologías con las que construyo soluciones día a día.
+        </p>
+
+        <div class="skills-wrapper">
+
+          <div class="skill-group reveal reveal-delay-1" id="skill-languages">
+            <div class="skill-group-icon" aria-hidden="true"><img src="src/icons/code_icon.jpg" alt="Code" class="custom-icon"></div>
+            <h3 class="skill-group-title">Lenguajes Core</h3>
+            <ul class="skill-list" aria-label="Lenguajes de programación">
+              <li>JavaScript (ES6+)</li>
+              <li>Python 3</li>
+              <li>HTML5 Semántico</li>
+              <li>CSS3 Arquitectural</li>
+              <li>DOM Manipulation API</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal reveal-delay-2" id="skill-infra">
+            <div class="skill-group-icon" aria-hidden="true"><img src="src/icons/tux.png" alt="Linux" class="custom-icon"></div>
+            <h3 class="skill-group-title">Linux &amp; Entorno</h3>
+            <ul class="skill-list" aria-label="Linux y entorno de desarrollo">
+              <li>Linux (usuario entusiasta)</li>
+              <li>Bash Scripting</li>
+              <li>Terminal Avanzada</li>
+              <li>Git / GitHub</li>
+              <li>Neovim</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal reveal-delay-3" id="skill-tools">
+            <div class="skill-group-icon" aria-hidden="true"><img src="src/icons/tools_icon.jpg" alt="Tools" class="custom-icon"></div>
+            <h3 class="skill-group-title">Herramientas</h3>
+            <ul class="skill-list" aria-label="Herramientas de desarrollo">
+              <li>Git / GitHub</li>
+              <li>Control de versiones colaborativo</li>
+              <li>Neovim</li>
+              <li>Programación Modular</li>
+              <li>Clean Code / README-driven</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PROYECTOS – POKER DECK
+         ========================================================= -->
+    <section id="proyectos" aria-labelledby="projects-title">
+      <div class="container">
+        <span class="section-label reveal">Proyectos</span>
+        <h2 class="section-title reveal" id="projects-title">Trabajo seleccionado.</h2>
+        <p class="section-subtitle reveal reveal-delay-1">
+          Elige una carta para explorar el proyecto.
+        </p>
+
+        <!-- POKER DECK SCENE -->
+        <div class="poker-scene reveal" id="poker-scene" aria-label="Baraja de proyectos">
+
+          <!-- Hand of cards -->
+          <div class="poker-hand" id="poker-hand" role="list">
+
+            <!-- Card 1 -->
+            <div class="poker-card" data-index="0" role="listitem" tabindex="0"
+                 aria-label="Proyecto: E-Commerce Platform">
+              <div class="poker-card-inner">
+                <!-- Back -->
+                <div class="poker-card-back" aria-hidden="true">
+                  <div class="card-back-grid"></div>
+                  <div class="card-back-logo">M<span>.DEV</span></div>
+                  <div class="card-back-corner top-left">♠</div>
+                  <div class="card-back-corner bot-right">♠</div>
+                </div>
+                <!-- Face -->
+                <div class="poker-card-face">
+                  <div class="card-rank">01</div>
+                  <div class="card-face-icon"><img src="src/icons/shop_icon.jpg" alt="Shop" class="custom-icon"></div>
+                  <div class="card-face-title">E-Commerce</div>
+                  <div class="card-face-tags">
+                    <span>JS ES6+</span><span>CSS3</span><span>Web Storage</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="poker-card" data-index="1" role="listitem" tabindex="0"
+                 aria-label="Proyecto: MVP Hackathon 2026">
+              <div class="poker-card-inner">
+                <div class="poker-card-back" aria-hidden="true">
+                  <div class="card-back-grid"></div>
+                  <div class="card-back-logo">M<span>.DEV</span></div>
+                  <div class="card-back-corner top-left">♦</div>
+                  <div class="card-back-corner bot-right">♦</div>
+                </div>
+                <div class="poker-card-face">
+                  <div class="card-rank">02</div>
+                  <div class="card-face-icon"><img src="src/icons/hack_icon.jpg" alt="Hack" class="custom-icon"></div>
+                  <div class="card-face-title">Hackathon</div>
+                  <div class="card-face-tags">
+                    <span>Agile</span><span>Git</span><span>Teamwork</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="poker-card" data-index="2" role="listitem" tabindex="0"
+                 aria-label="Proyecto: Linux Environment">
+              <div class="poker-card-inner">
+                <div class="poker-card-back" aria-hidden="true">
+                  <div class="card-back-grid"></div>
+                  <div class="card-back-logo">M<span>.DEV</span></div>
+                  <div class="card-back-corner top-left">♣</div>
+                  <div class="card-back-corner bot-right">♣</div>
+                </div>
+                <div class="poker-card-face">
+                  <div class="card-rank">03</div>
+                  <div class="card-face-icon"><img src="src/icons/tux.png" alt="Linux" class="custom-icon"></div>
+                  <div class="card-face-title">Linux Env.</div>
+                  <div class="card-face-tags">
+                    <span>Bash</span><span>Linux</span><span>Sysadmin</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="poker-card" data-index="3" role="listitem" tabindex="0"
+                 aria-label="Proyecto: Space Travel UI">
+              <div class="poker-card-inner">
+                <div class="poker-card-back" aria-hidden="true">
+                  <div class="card-back-grid"></div>
+                  <div class="card-back-logo">M<span>.DEV</span></div>
+                  <div class="card-back-corner top-left">♥</div>
+                  <div class="card-back-corner bot-right">♥</div>
+                </div>
+                <div class="poker-card-face">
+                  <div class="card-rank">04</div>
+                  <div class="card-face-icon"><img src="src/icons/space_icon.jpg" alt="Space" class="custom-icon"></div>
+                  <div class="card-face-title">Space UI</div>
+                  <div class="card-face-tags">
+                    <span>HTML5</span><span>CSS3</span><span>UI Design</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /poker-hand -->
+
+          <!-- Detail panel (populated by JS) -->
+          <div class="poker-detail" id="poker-detail" aria-live="polite">
+            <p class="poker-hint">
+              <span>↑</span> Haz click en una carta para ver el detalle
+            </p>
+          </div>
+
+          <!-- Keyboard hint -->
+          <div class="poker-nav-hint" aria-hidden="true">
+            <kbd>←</kbd><kbd>→</kbd> navegar &nbsp;·&nbsp; <kbd>Enter</kbd> seleccionar
+          </div>
+
+        </div><!-- /poker-scene -->
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         INTERESES & DIRECCIÓN FUTURA
+         ========================================================= -->
+    <section id="intereses" aria-labelledby="interests-title">
+      <div class="container">
+        <span class="section-label reveal">Horizonte</span>
+        <h2 class="section-title reveal" id="interests-title">Hacia dónde apunto.</h2>
+        <p class="section-subtitle reveal reveal-delay-1">
+          Áreas de profundización activa. El código es el medio,
+          el conocimiento es el objetivo.
+        </p>
+
+        <div class="interests-grid">
+
+          <!-- Data Science -->
+          <div class="interest-card data-science reveal reveal-delay-1" id="interest-data">
+            <div class="interest-icon-wrap" aria-hidden="true"><img src="src/icons/data_icon.jpg" alt="Data" class="custom-icon"></div>
+            <h3 class="interest-title">Ciencia de Datos</h3>
+            <p class="interest-desc">
+              Interés activo en el análisis, modelado y visualización de datos.
+              Python es mi base natural para esta transición — desde el scripting
+              hacia el procesamiento de datos estructurados y la generación de
+              insights accionables a partir de conjuntos de datos complejos.
+            </p>
+            <div class="interest-topics">
+              <span class="topic-pill">Python / Pandas</span>
+              <span class="topic-pill">Visualización</span>
+              <span class="topic-pill">Machine Learning</span>
+              <span class="topic-pill">Análisis Estadístico</span>
+            </div>
+          </div>
+
+          <!-- Cybersecurity -->
+          <div class="interest-card cybersec reveal reveal-delay-2" id="interest-cyber">
+            <div class="interest-icon-wrap" aria-hidden="true"><img src="src/icons/cyber_icon.jpg" alt="Cyber" class="custom-icon"></div>
+            <h3 class="interest-title">Ciberseguridad</h3>
+            <p class="interest-desc">
+              La administración profunda de Linux y la comprensión de sistemas
+              a bajo nivel me abrieron la puerta a la seguridad informática.
+              Interés en seguridad ofensiva/defensiva, análisis de vulnerabilidades
+              y construcción de software seguro desde la arquitectura.
+            </p>
+            <div class="interest-topics">
+              <span class="topic-pill">Seguridad Ofensiva</span>
+              <span class="topic-pill">Linux Hardening</span>
+              <span class="topic-pill">CTF / Retos</span>
+              <span class="topic-pill">Análisis de Sistemas</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER / CONTACTO
+       ========================================================= -->
+  <footer id="contacto">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">MIGUEL<span>.DEV</span></a>
+          <p>Desarrollado con estándares web estrictos.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="https://github.com/alejandro-xoxo" target="_blank" rel="noopener" id="footer-github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="mailto:alejandro182026@gmail.com" id="footer-email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            alejandro182026@gmail.com
+          </a>
+          <a href="tel:+573114805546" id="footer-phone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +57 311 480 5546
+          </a>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2026 Miguel Alejandro. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Three.js + main script (ES Module) -->
+  <script type="module" src="main.js"></script>
+
+</body>
+</html>
