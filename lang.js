@@ -98,7 +98,7 @@ window.translations = {
     nav_contact: "Contact",
     
     hero_badge: "Available for projects",
-    hero_title: "<span class=\"word\" style=\"animation-delay:0.15s\">I build</span> <span class=\"word\" style=\"animation-delay:0.28s\">efficient</span><br> <span class=\"gradient-text\"> <span class=\"word\" style=\"animation-delay:0.42s\">and</span> <span class=\"word\" style=\"animation-delay:0.55s\">elegant</span> <span class=\"word\" style=\"animation-delay:0.65s\">software.</span> </span>",
+    hero_title: "<span class=\"word\" style=\"animation-delay:0.15s\">I build</span> <span class=\"word\" style=\"animation-delay:0.28s\">software</span><br> <span class=\"gradient-text\"> <span class=\"word\" style=\"animation-delay:0.42s\">efficient</span> <span class=\"word\" style=\"animation-delay:0.55s\">&amp;</span> <span class=\"word\" style=\"animation-delay:0.65s\">elegant.</span> </span>",
     hero_desc: "<strong>Full Stack Developer</strong> focused on <strong>scalable and robust</strong> software solutions. Modern ecosystem for frontend architecture, backend business logic, and a strong focus on <strong>AI Agents</strong> integration.",
     hero_btn_projects: "Request Tech CV",
     hero_btn_contact: "GitHub",
