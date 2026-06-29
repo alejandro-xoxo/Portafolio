@@ -1,4 +1,4 @@
-const translations = {
+window.translations = {
   es: {
     lang_btn: "EN",
     nav_about: "Sobre mí",
@@ -8,11 +8,10 @@ const translations = {
     nav_contact: "Contacto",
     
     hero_badge: "Disponible para proyectos",
-    hero_title: "Ingeniero de Software <span class=\"highlight\">Full Stack</span>",
-    hero_subtitle: "Construyendo soluciones técnicas sólidas, seguras y escalables.",
-    hero_desc: "Especializado en la integración de <span class=\"text-glow\">Inteligencia Artificial</span>, administración de sistemas <strong>Linux</strong> y arquitecturas de alto rendimiento. Apasionado por el ecosistema de código abierto.",
-    hero_btn_projects: "Ver Proyectos",
-    hero_btn_contact: "Contactar",
+    hero_title: "<span class=\"word\" style=\"animation-delay:0.15s\">Construyo</span> <span class=\"word\" style=\"animation-delay:0.28s\">software</span><br> <span class=\"gradient-text\"> <span class=\"word\" style=\"animation-delay:0.42s\">eficiente</span> <span class=\"word\" style=\"animation-delay:0.55s\">y</span> <span class=\"word\" style=\"animation-delay:0.65s\">elegante.</span> </span>",
+    hero_desc: "<strong>Full Stack Developer</strong> orientado a soluciones de software <strong>escalables y robustas</strong>. Ecosistema moderno para arquitectura frontend, lógica de negocio en el backend y fuerte enfoque en la integración de <strong>Agentes de IA</strong>.",
+    hero_btn_projects: "Solicitar CV técnico",
+    hero_btn_contact: "GitHub",
     
     stat_repos: "Repositorios destacados",
     stat_langs: "Lenguajes core",
@@ -57,16 +56,22 @@ const translations = {
     soft_tag_version: "Versiones",
     soft_tag_team: "Equipo",
     
-    projects_label: "Portafolio",
-    projects_title: "Proyectos Destacados.",
-    projects_subtitle: "Una selección de aplicaciones construidas enfocadas en el rendimiento, la escalabilidad y la usabilidad.",
+    projects_label: "Proyectos",
+    projects_title: "Trabajo seleccionado.",
+    projects_subtitle: "Elige una carta para explorar el proyecto.",
+    projects_hint: "<span>↑</span> Haz click en una carta para ver el detalle",
+    projects_nav: "<kbd>←</kbd><kbd>→</kbd> navegar &nbsp;·&nbsp; <kbd>Enter</kbd> seleccionar",
     
-    proj_app_title: "Mi App de Vida",
-    proj_app_desc: "Aplicación centralizada para la gestión de rutinas, manifiestos personales y planificación a largo plazo. Integra un panel interactivo con visualización de datos y gamificación de objetivos.",
-    proj_os_title: "Arch Linux Config",
-    proj_os_desc: "Entorno de desarrollo Linux construido desde cero utilizando un gestor de ventanas tiling (Hyprland), optimizando drásticamente el consumo de recursos y la productividad mediante atajos de teclado.",
-    proj_agent_title: "Agentes IA",
-    proj_agent_desc: "Desarrollo de asistentes automatizados que interpretan flujos de trabajo locales, realizan scaffolding de proyectos y refactorizan código autónomamente usando modelos LLM integrados en CLI.",
+    proj_0_title: "E-Commerce Project",
+    proj_0_desc: "Proyecto académico individual enfocado en la construcción de una aplicación de e-commerce. Implementación de desarrollo frontend de cero, lógica de negocio robusta, gestión del estado del carrito de compras y persistencia de datos local.",
+    proj_1_title: "Campus Guardian Access AI (1er Lugar)",
+    proj_1_desc: "Desarrollo de un MVP funcional (Asistente de aula con IA) en un tiempo restringido de 6 horas durante la Hackathon Campuslands 2026. Destaca el <strong style=\"color:var(--text-main)\">trabajo en equipo intensivo</strong>, la resolución ágil de problemas y el uso estratégico de <strong style=\"color:var(--text-main)\">Agentes de IA</strong> para lograr integrar con éxito herramientas complejas como Visión por Computadora y Gemini API.",
+    proj_2_title: "Linux Environment Infrastructure",
+    proj_2_desc: "Automatización y estandarización del entorno de desarrollo personal. Scripts de configuración a bajo nivel para optimización de recursos, personalización de terminal y gestión de ventanas con <strong style=\"color:var(--text-main)\">Hyprland</strong> en Linux.",
+    proj_3_title: "Space Travel UI",
+    proj_3_desc: "Maquetación estática de alta fidelidad de una interfaz de usuario de temática espacial. Diseño responsivo, <strong style=\"color:var(--text-main)\">estructuración semántica de componentes</strong> visuales y CSS arquitectural de precisión pixel-perfect.",
+    proj_btn_back: "Volver a baraja",
+    proj_btn_code: "Ver código fuente",
     
     interests_label: "Aprendizaje Continuo",
     interests_title: "Áreas de Exploración.",
@@ -93,11 +98,10 @@ const translations = {
     nav_contact: "Contact",
     
     hero_badge: "Available for projects",
-    hero_title: "Software Engineer <span class=\"highlight\">Full Stack</span>",
-    hero_subtitle: "Building solid, secure, and scalable technical solutions.",
-    hero_desc: "Specialized in <span class=\"text-glow\">Artificial Intelligence</span> integration, <strong>Linux</strong> system administration, and high-performance architectures. Passionate about the open-source ecosystem.",
-    hero_btn_projects: "View Projects",
-    hero_btn_contact: "Get in Touch",
+    hero_title: "<span class=\"word\" style=\"animation-delay:0.15s\">I build</span> <span class=\"word\" style=\"animation-delay:0.28s\">efficient</span><br> <span class=\"gradient-text\"> <span class=\"word\" style=\"animation-delay:0.42s\">and</span> <span class=\"word\" style=\"animation-delay:0.55s\">elegant</span> <span class=\"word\" style=\"animation-delay:0.65s\">software.</span> </span>",
+    hero_desc: "<strong>Full Stack Developer</strong> focused on <strong>scalable and robust</strong> software solutions. Modern ecosystem for frontend architecture, backend business logic, and a strong focus on <strong>AI Agents</strong> integration.",
+    hero_btn_projects: "Request Tech CV",
+    hero_btn_contact: "GitHub",
     
     stat_repos: "Featured Repos",
     stat_langs: "Core Languages",
@@ -142,16 +146,22 @@ const translations = {
     soft_tag_version: "Version Ctrl",
     soft_tag_team: "Teamwork",
     
-    projects_label: "Portfolio",
-    projects_title: "Featured Projects.",
-    projects_subtitle: "A selection of built applications focused on performance, scalability, and usability.",
+    projects_label: "Projects",
+    projects_title: "Selected Work.",
+    projects_subtitle: "Pick a card to explore the project.",
+    projects_hint: "<span>↑</span> Click on a card to see details",
+    projects_nav: "<kbd>←</kbd><kbd>→</kbd> navigate &nbsp;·&nbsp; <kbd>Enter</kbd> select",
     
-    proj_app_title: "My Life App",
-    proj_app_desc: "Centralized application for routine management, personal manifestos, and long-term planning. Integrates an interactive dashboard with data visualization and goal gamification.",
-    proj_os_title: "Arch Linux Config",
-    proj_os_desc: "Linux development environment built from scratch using a tiling window manager (Hyprland), drastically optimizing resource consumption and productivity through keyboard shortcuts.",
-    proj_agent_title: "AI Agents",
-    proj_agent_desc: "Development of automated assistants that interpret local workflows, scaffold projects, and refactor code autonomously using CLI-integrated LLM models.",
+    proj_0_title: "E-Commerce Project",
+    proj_0_desc: "Individual academic project focused on building an e-commerce application. Implementation of frontend development from scratch, robust business logic, shopping cart state management, and local data persistence.",
+    proj_1_title: "Campus Guardian Access AI (1st Place)",
+    proj_1_desc: "Development of a functional MVP (AI Classroom Assistant) in a restricted time of 6 hours during the Campuslands 2026 Hackathon. Highlights <strong style=\"color:var(--text-main)\">intensive teamwork</strong>, agile problem solving, and the strategic use of <strong style=\"color:var(--text-main)\">AI Agents</strong> to successfully integrate complex tools like Computer Vision and the Gemini API.",
+    proj_2_title: "Linux Environment Infrastructure",
+    proj_2_desc: "Automation and standardization of the personal development environment. Low-level configuration scripts for resource optimization, terminal customization, and window management with <strong style=\"color:var(--text-main)\">Hyprland</strong> on Linux.",
+    proj_3_title: "Space Travel UI",
+    proj_3_desc: "High-fidelity static layout of a space-themed user interface. Responsive design, <strong style=\"color:var(--text-main)\">semantic structuring of visual components</strong>, and pixel-perfect architectural CSS.",
+    proj_btn_back: "Back to deck",
+    proj_btn_code: "View source code",
     
     interests_label: "Continuous Learning",
     interests_title: "Areas of Exploration.",
@@ -171,11 +181,11 @@ const translations = {
   }
 };
 
-let currentLang = 'es';
+window.currentLang = 'es';
 
 function toggleLanguage() {
-  currentLang = currentLang === 'es' ? 'en' : 'es';
-  const t = translations[currentLang];
+  window.currentLang = window.currentLang === 'es' ? 'en' : 'es';
+  const t = window.translations[window.currentLang];
   
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
@@ -184,7 +194,10 @@ function toggleLanguage() {
     }
   });
   
-  document.documentElement.lang = currentLang;
+  // Custom trigger for components that render via JS (like poker deck)
+  document.dispatchEvent(new CustomEvent('languageChanged'));
+  
+  document.documentElement.lang = window.currentLang;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
