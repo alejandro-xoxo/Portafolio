@@ -288,8 +288,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
    6.  3D CARD TILT (hover effect con brillo)
    ============================================================ */
 (function initCardTilt() {
-  /* Targets: skill groups, stats, interests, soft skills, manifesto */
-  const cards = document.querySelectorAll('.skill-group, .stat-card, .interest-card, .soft-skill-card, .manifesto-layout');
+  /* Targets: skill groups, stats, interests, soft skills, manifesto cards */
+  const cards = document.querySelectorAll('.skill-group, .stat-card, .interest-card, .soft-skill-card, .manifesto-card');
   if (!cards.length) return;
 
   const CONFIG = {
