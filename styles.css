@@ -658,39 +658,134 @@ section {
 /* ============================================================
    SKILLS / TECH STACK
    ============================================================ */
-.skills-wrapper {
+/* ============================================================
+   VISIÓN / MISIÓN
+   ============================================================ */
+.vision-mission-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+@media (max-width: 768px) {
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.purpose-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.purpose-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: linear-gradient(to bottom, var(--blue-400), var(--purple-400));
+}
+.purpose-title {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  color: var(--text-100);
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.purpose-text {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-200);
+}
+.purpose-text em {
+  color: var(--blue-400);
+  font-style: normal;
+}
+.purpose-text strong {
+  color: var(--purple-400);
 }
 
-.skill-group {
+/* ============================================================
+   MARQUEE (INFINITE SCROLL)
+   ============================================================ */
+.marquee-section {
+  overflow: hidden;
+  padding: 80px 0;
+}
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 40px;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollLeft 35s linear infinite;
+}
+.soft-track {
+  animation: scrollRight 35s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 10px)); }
+}
+@keyframes scrollRight {
+  0% { transform: translateX(calc(-50% - 10px)); }
+  100% { transform: translateX(0); }
+}
+
+/* ============================================================
+   TECH STACK GRID / ITEMS
+   ============================================================ */
+.tech-item {
+  width: 160px; /* Fixed width for marquee */
+  flex-shrink: 0;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 28px;
-  backdrop-filter: blur(10px);
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+  cursor: default;
 }
-
-.skill-group::before {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--blue-700), var(--blue-400), var(--purple-400), var(--blue-700));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.skill-group:hover {
+.tech-item:hover {
   border-color: var(--border-bright);
-  box-shadow: 0 20px 50px rgba(168, 85, 247, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
 }
-
-.skill-group:hover::before { opacity: 1; }
+.tech-icon {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s ease;
+}
+.tech-item:hover .tech-icon {
+  transform: scale(1.1);
+}
+.tech-name {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-300);
+  text-align: center;
+}
 
 /* ---- Stat card hover (JS tilt override) ---- */
 .stat-card:hover {
