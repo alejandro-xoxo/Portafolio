@@ -794,15 +794,46 @@ section {
   padding: 60px 0;
 }
 .soft-skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
   margin-top: 40px;
-  justify-content: center;
 }
-.soft-skills-grid .tech-item {
-  width: auto;
-  padding: 16px 24px;
+.soft-skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.soft-skill-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.10);
+}
+.soft-skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(to bottom, var(--blue-500), var(--purple-500));
+}
+.soft-skill-title {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  color: var(--text-100);
+  font-weight: 700;
+}
+.soft-skill-desc {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-200);
 }
 
 /* ---- Stat card hover (JS tilt override) ---- */
