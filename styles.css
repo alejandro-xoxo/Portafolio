@@ -787,6 +787,24 @@ section {
   text-align: center;
 }
 
+/* ============================================================
+   SOFT SKILLS GRID (STATIC)
+   ============================================================ */
+.soft-skills-section {
+  padding: 60px 0;
+}
+.soft-skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 40px;
+  justify-content: center;
+}
+.soft-skills-grid .tech-item {
+  width: auto;
+  padding: 16px 24px;
+}
+
 /* ---- Stat card hover (JS tilt override) ---- */
 .stat-card:hover {
   border-color: var(--border-bright);
