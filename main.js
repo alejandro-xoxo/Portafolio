@@ -13,8 +13,9 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
   if (!canvas || !section) return;
 
   /* --- Renderer ------------------------------------------- */
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const isMobile = window.innerWidth < 768;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 2));
   renderer.setClearColor(0x000000, 0);
 
   /* --- Scene & Camera ------------------------------------- */
@@ -23,7 +24,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
   camera.position.z = 28;
 
   /* --- Geometry: floating particles ----------------------- */
-  const PARTICLE_COUNT = 1800;
+  const PARTICLE_COUNT = isMobile ? 600 : 1800;
   const positions = new Float32Array(PARTICLE_COUNT * 3);
   const colors    = new Float32Array(PARTICLE_COUNT * 3);
 
@@ -60,7 +61,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
   scene.add(points);
 
   /* --- Geometry: connection lines  ----------------------- */
-  const LINE_COUNT = 180;
+  const LINE_COUNT = isMobile ? 60 : 180;
   const linePositions = new Float32Array(LINE_COUNT * 6);
   const lineColors    = new Float32Array(LINE_COUNT * 6);
 
