@@ -810,18 +810,36 @@ section {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .soft-skill-card:hover {
   border-color: var(--border-bright);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.10);
 }
 .soft-skill-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0;
-  width: 3px; height: 100%;
-  background: linear-gradient(to bottom, var(--blue-500), var(--purple-500));
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue-700), var(--blue-400), var(--purple-400), var(--blue-700));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.soft-skill-card:hover::before {
+  opacity: 1;
+}
+.soft-skill-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.03), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+}
+.soft-skill-card:hover::after {
+  left: 140%;
 }
 .soft-skill-title {
   font-family: var(--font-sans);
