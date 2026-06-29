@@ -789,10 +789,10 @@ section {
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: scrollLeft 35s linear infinite;
+  animation: scrollLeft 25s linear infinite;
 }
 .soft-track {
-  animation: scrollRight 35s linear infinite;
+  animation: scrollRight 25s linear infinite;
 }
 .marquee-track:hover {
   animation-play-state: paused;
