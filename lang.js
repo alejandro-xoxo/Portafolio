@@ -7,6 +7,16 @@ window.translations = {
     nav_interests: "Intereses",
     nav_contact: "Contacto",
     
+    about_label: "Sobre mí",
+    about_title: "Código limpio.<br>Soluciones reales.",
+    about_p1: "Soy <strong>Miguel Alejandro</strong>, <strong>Full Stack Developer</strong> orientado a la construcción de soluciones <strong>escalables y eficientes</strong>. Me enfoco en dominar tanto la arquitectura frontend como la lógica backend, junto con la integración de herramientas modernas y Agentes de Inteligencia Artificial.",
+    about_p2: "Soy usuario entusiasta de <strong>Linux</strong> — mi entorno de desarrollo nativo. Automatizo flujos de trabajo, configuro el sistema a bajo nivel y optimizo cada herramienta para que el código fluya sin fricción.",
+    about_bullet1: "Control de versiones estricto en cada proyecto",
+    about_bullet2: "Código nativo antes de frameworks externos",
+    about_bullet3: "Arquitectura orientada a resolución de problemas reales de negocio",
+    about_bullet4: "Documentación y diseño README-driven",
+
+    
     hero_badge: "Disponible para proyectos",
     hero_w1: "Construyo",
     hero_w2: "software",
@@ -100,6 +110,16 @@ window.translations = {
     nav_projects: "Projects",
     nav_interests: "Interests",
     nav_contact: "Contact",
+    
+    about_label: "About Me",
+    about_title: "Clean code.<br>Real solutions.",
+    about_p1: "I am <strong>Miguel Alejandro</strong>, a <strong>Full Stack Developer</strong> focused on building <strong>scalable and efficient</strong> solutions. I aim to master both frontend architecture and backend logic, along with the integration of modern tools and Artificial Intelligence Agents.",
+    about_p2: "I am an enthusiastic <strong>Linux</strong> user — my native development environment. I automate workflows, configure the system at a low level, and optimize every tool so code flows without friction.",
+    about_bullet1: "Strict version control in every project",
+    about_bullet2: "Native code before external frameworks",
+    about_bullet3: "Architecture oriented towards solving real business problems",
+    about_bullet4: "README-driven design and documentation",
+
     
     hero_badge: "Available for projects",
     hero_w1: "I build",
