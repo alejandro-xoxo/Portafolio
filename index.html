@@ -37,11 +37,12 @@
     <div class="nav-container">
       <a href="#hero" class="logo">MIGUEL<span>.DEV</span></a>
       <nav class="nav-links" aria-label="Navegación principal">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#stack">Ecosistema</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#intereses">Intereses</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#sobre-mi" data-i18n="nav_about">Sobre mí</a>
+        <a href="#stack" data-i18n="nav_stack">Ecosistema</a>
+        <a href="#proyectos" data-i18n="nav_projects">Proyectos</a>
+        <a href="#intereses" data-i18n="nav_interests">Intereses</a>
+        <a href="#contacto" data-i18n="nav_contact">Contacto</a>
+        <button id="lang-toggle" class="btn-lang" data-i18n="lang_btn">EN</button>
       </nav>
     </div>
   </header>
@@ -172,18 +173,18 @@
     <section id="manifiesto" aria-labelledby="manifiesto-title" class="manifesto-section">
       <div class="manifesto-bg-glow"></div>
       <div class="container relative">
-        <span class="section-label reveal">Manifiesto</span>
-        <h2 class="section-title reveal" id="manifiesto-title">Lo que me mueve.</h2>
+        <span class="section-label reveal" data-i18n="manifesto_label">Manifiesto</span>
+        <h2 class="section-title reveal" id="manifiesto-title" data-i18n="manifesto_title">Lo que me mueve.</h2>
         
         <div class="manifesto-split reveal reveal-delay-1">
           <!-- Visión -->
           <div class="manifesto-card vision-card">
             <div class="manifesto-icon-header">
               <div class="quote-mark">“</div>
-              <h3 class="manifesto-heading">Visión</h3>
+              <h3 class="manifesto-heading" data-i18n="vision_title">Visión</h3>
             </div>
             <div class="manifesto-content">
-              <p class="manifesto-text">
+              <p class="manifesto-text" data-i18n="vision_text">
                 Mi propósito es utilizar el desarrollo de software como un motor de progreso y estabilidad. Aspiro a ser un <strong>arquitecto de soluciones</strong> cuyo trabajo trascienda el código, convirtiéndose en el medio definitivo para construir seguridad, crecimiento y bienestar para mi núcleo familiar y las personas que me rodean.
               </p>
             </div>
@@ -193,10 +194,10 @@
           <div class="manifesto-card mission-card">
             <div class="manifesto-icon-header">
               <div class="quote-mark">”</div>
-              <h3 class="manifesto-heading">Misión</h3>
+              <h3 class="manifesto-heading" data-i18n="mission_title">Misión</h3>
             </div>
             <div class="manifesto-content">
-              <p class="manifesto-text">
+              <p class="manifesto-text" data-i18n="mission_text">
                 No programo para impresionar, sino para <strong>entregar soluciones</strong>. La curiosidad por entender el funcionamiento de los sistemas desde su base me impulsa a resolver problemas reales creando proyectos desde cero. Asumo cada reto como una oportunidad para entregar software limpio, funcional y sin sobreingeniería, garantizando <em>calidad técnica y visual</em>.
               </p>
             </div>
@@ -511,6 +512,7 @@
   </footer>
 
   <!-- Three.js + main script (ES Module) -->
+  <script src="lang.js"></script>
   <script type="module" src="main.js"></script>
 
 </body>
