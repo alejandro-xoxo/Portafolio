@@ -497,9 +497,9 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
     },
     {
       icon: '⚡',
-      title: 'Campus Guardian Access AI (1er Lugar Hackathon)',
-      desc: 'Asistente de aula impulsado por IA capaz de detectar niveles de atención y distracciones utilizando Visión por Computadora. Implementa detección de objetos en tiempo real con <strong style="color:var(--text-main)">YOLOv8</strong>, análisis facial con <strong style="color:var(--text-main)">MediaPipe</strong> y reportes generados por IA mediante <strong style="color:var(--text-main)">Gemini API</strong>.',
-      tags: ['Python', 'YOLOv8', 'MediaPipe', 'FiftyOne', 'Gemini API', 'Streamlit'],
+      title: 'Campus Guardian Access AI (1er Lugar)',
+      desc: 'Desarrollo de un MVP funcional (Asistente de aula con IA) en un tiempo restringido de 6 horas durante la Hackathon Campuslands 2026. Destaca el <strong style="color:var(--text-main)">trabajo en equipo intensivo</strong>, la resolución ágil de problemas y el uso estratégico de <strong style="color:var(--text-main)">Agentes de IA</strong> para lograr integrar con éxito herramientas complejas como Visión por Computadora y Gemini API.',
+      tags: ['Problem Solving', 'Trabajo en Equipo', 'AI Agents', 'Agile / Entrega Rápida'],
       link: 'https://github.com/alejandro-xoxo/HachatonCampuslans2026'
     },
     {
