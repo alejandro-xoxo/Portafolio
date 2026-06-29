@@ -489,14 +489,14 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
   // Project Database
   const projects = [
     {
-      icon: '<img src="src/icons/shop_icon.jpg" alt="Shop" class="custom-icon">',
+      icon: '🛒',
       title: 'E-Commerce Platform Core',
       desc: 'Construcción de la lógica de negocio e interfaz para un sistema de ventas online. Gestión de estado del carrito de compras, persistencia local con <strong style="color:var(--text-main)">Web Storage API</strong> y renderizado dinámico de componentes desde estructuras de datos.',
       tags: ['JavaScript ES6+', 'HTML5 Semántico', 'CSS3', 'Web Storage API', 'DOM Manipulation'],
       link: 'https://github.com/alejandro-xoxo/Proyecto_E-commerce_AcevedoMiguel'
     },
     {
-      icon: '<img src="src/icons/hack_icon.jpg" alt="Hack" class="custom-icon">',
+      icon: '⚡',
       title: 'MVP Hackathon 2026',
       desc: 'Producto mínimo viable desarrollado en entorno de tiempo restringido. Valida resolución ágil de problemas, <strong style="color:var(--text-main)">control de versiones colaborativo</strong> y entrega continua bajo presión. Organizado por CampusLANS 2026.',
       tags: ['Problem Solving', 'Trabajo en Equipo', 'Git / GitHub', 'Agile / Entrega Rápida'],
@@ -510,7 +510,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
       link: 'https://github.com/alejandro-xoxo/Miarch'
     },
     {
-      icon: '<img src="src/icons/space_icon.jpg" alt="Space" class="custom-icon">',
+      icon: '🚀',
       title: 'Space Travel UI',
       desc: 'Maquetación estática de alta fidelidad de una interfaz de usuario de temática espacial. Diseño responsivo, <strong style="color:var(--text-main)">estructuración semántica de componentes</strong> visuales y CSS arquitectural de precisión pixel-perfect.',
       tags: ['HTML5 Semántico', 'CSS3 Avanzado', 'Responsive Design', 'UI / Frontend'],
