@@ -490,16 +490,16 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
   const projects = [
     {
       icon: '🛒',
-      title: 'E-Commerce Platform Core',
-      desc: 'Construcción de la lógica de negocio e interfaz para un sistema de ventas online. Gestión de estado del carrito de compras, persistencia local con <strong style="color:var(--text-main)">Web Storage API</strong> y renderizado dinámico de componentes desde estructuras de datos.',
-      tags: ['JavaScript ES6+', 'HTML5 Semántico', 'CSS3', 'Web Storage API', 'DOM Manipulation'],
+      title: 'E-Commerce Project',
+      desc: 'Proyecto académico enfocado en la construcción de una aplicación de e-commerce, implementando desarrollo frontend, lógica de negocio y desarrollo colaborativo utilizando Git. Gestión de estado del carrito de compras y persistencia local.',
+      tags: ['JavaScript ES6+', 'HTML5', 'CSS3', 'Git / Colaboración'],
       link: 'https://github.com/alejandro-xoxo/Proyecto_E-commerce_AcevedoMiguel'
     },
     {
       icon: '⚡',
-      title: 'MVP Hackathon 2026',
-      desc: 'Producto mínimo viable desarrollado en entorno de tiempo restringido. Valida resolución ágil de problemas, <strong style="color:var(--text-main)">control de versiones colaborativo</strong> y entrega continua bajo presión. Organizado por CampusLANS 2026.',
-      tags: ['Problem Solving', 'Trabajo en Equipo', 'Git / GitHub', 'Agile / Entrega Rápida'],
+      title: 'Campus Guardian Access AI (1er Lugar Hackathon)',
+      desc: 'Asistente de aula impulsado por IA capaz de detectar niveles de atención y distracciones utilizando Visión por Computadora. Implementa detección de objetos en tiempo real con <strong style="color:var(--text-main)">YOLOv8</strong>, análisis facial con <strong style="color:var(--text-main)">MediaPipe</strong> y reportes generados por IA mediante <strong style="color:var(--text-main)">Gemini API</strong>.',
+      tags: ['Python', 'YOLOv8', 'MediaPipe', 'FiftyOne', 'Gemini API', 'Streamlit'],
       link: 'https://github.com/alejandro-xoxo/HachatonCampuslans2026'
     },
     {
