@@ -491,8 +491,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
     {
       icon: '🛒',
       title: 'E-Commerce Project',
-      desc: 'Proyecto académico enfocado en la construcción de una aplicación de e-commerce, implementando desarrollo frontend, lógica de negocio y desarrollo colaborativo utilizando Git. Gestión de estado del carrito de compras y persistencia local.',
-      tags: ['JavaScript ES6+', 'HTML5', 'CSS3', 'Git / Colaboración'],
+      desc: 'Proyecto académico individual enfocado en la construcción de una aplicación de e-commerce. Implementación de desarrollo frontend de cero, lógica de negocio robusta, gestión del estado del carrito de compras y persistencia de datos local.',
+      tags: ['JavaScript ES6+', 'HTML5', 'CSS3', 'Lógica de Negocio'],
       link: 'https://github.com/alejandro-xoxo/Proyecto_E-commerce_AcevedoMiguel'
     },
     {
