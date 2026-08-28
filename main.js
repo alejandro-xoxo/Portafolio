@@ -496,56 +496,42 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
     return key;
   }
 
-  // Project Database
+  // Project Database (Top 5 Featured Projects)
   const projects = [
     {
-      icon: '🛒',
+      icon: '🤖',
       get title() { return t('proj_0_title'); },
       get desc() { return t('proj_0_desc'); },
-      tags: ['JavaScript ES6+', 'HTML5', 'CSS3', 'Lógica de Negocio'],
-      link: 'https://github.com/alejandro-xoxo/Proyecto_E-commerce_AcevedoMiguel'
+      tags: ['Trading Algorítmico', 'Python', 'MT4 / MQL4', 'Gestión de Riesgo', 'n8n', 'Telegram API'],
+      link: 'https://github.com/alejandro-xoxo/Kronos_Bot'
     },
     {
       icon: '⚡',
       get title() { return t('proj_1_title'); },
       get desc() { return t('proj_1_desc'); },
-      tags: ['Problem Solving', 'Trabajo en Equipo', 'AI Agents', 'Agile / Entrega Rápida'],
+      tags: ['Hackathon 1st Place', 'Agentes IA', 'Vision AI', 'Gemini API', 'Liderazgo & Agile'],
       link: 'https://github.com/alejandro-xoxo/HachatonCampuslans2026'
     },
     {
-      icon: '<img src="src/icons/tux.png" alt="Linux" class="custom-icon">',
+      icon: '📅',
       get title() { return t('proj_2_title'); },
       get desc() { return t('proj_2_desc'); },
-      tags: ['Linux', 'Bash Scripting', 'Hyprland', 'Sysadmin'],
-      link: 'https://github.com/alejandro-xoxo/Miarch'
-    },
-    {
-      icon: '🚀',
-      get title() { return t('proj_3_title'); },
-      get desc() { return t('proj_3_desc'); },
-      tags: ['HTML5 Semántico', 'CSS3 Avanzado', 'Responsive Design', 'UI / Frontend'],
-      link: 'https://github.com/alejandro-xoxo/space-travel-ui'
-    },
-    {
-      icon: '🤖',
-      get title() { return t('proj_4_title'); },
-      get desc() { return t('proj_4_desc'); },
-      tags: ['Python', 'n8n', 'PostgreSQL', 'MQL4', 'Human-in-the-Loop', 'Telegram Bot API'],
-      link: 'https://github.com/alejandro-xoxo/Kronos_Bot'
-    },
-    {
-      icon: '📅',
-      get title() { return t('proj_5_title'); },
-      get desc() { return t('proj_5_desc'); },
-      tags: ['n8n', 'Telegram Bot API', 'Google Sheets DB', 'Flujos CRUD', 'Automatización Cron', 'Zero Cost'],
+      tags: ['n8n Engine', 'Telegram Bot API', 'Google Sheets DB', 'Automatización Cron', 'Zero-Cloud Cost'],
       link: 'https://github.com/alejandro-xoxo/Proyecto_IA_Nivel1_AcevedoMiguel'
     },
     {
       icon: '🧠',
-      get title() { return t('proj_6_title'); },
-      get desc() { return t('proj_6_desc'); },
-      tags: ['Python', 'Agentes IA', 'Three.js 3D', 'Resiliencia & Circuit Breakers', 'Aprendizaje / Lección'],
+      get title() { return t('proj_3_title'); },
+      get desc() { return t('proj_3_desc'); },
+      tags: ['Arquitectura Agentes IA', 'Python', 'Three.js 3D', 'Circuit Breakers', 'Asynchronous Queues'],
       link: 'https://github.com/alejandro-xoxo/Milo'
+    },
+    {
+      icon: '<img src="src/icons/tux.png" alt="Linux" class="custom-icon">',
+      get title() { return t('proj_4_title'); },
+      get desc() { return t('proj_4_desc'); },
+      tags: ['Arch Linux', 'Bash Scripting', 'Hyprland Workstation', 'Sysadmin', 'Low-Level Tuning'],
+      link: 'https://github.com/alejandro-xoxo/Miarch'
     }
   ];
 
@@ -601,13 +587,10 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
           : 'rotate(0deg) translateX(0) translateY(0) translateZ(200px) scale(1.2)';
         card.style.zIndex = '100';
       } else {
-        // Normal fan position (Compact when idle, spread when hovered/active)
-        const centerOffset = i - (total - 1) / 2;
-        
-        // Dynamic parameters based on spread state
-        const rotateStep = isSpread ? (isMobile ? 7 : 9)  : (isMobile ? 2.5 : 3.5);
-        const xStep      = isSpread ? (isMobile ? 30 : 54) : (isMobile ? 12 : 22);
-        const yDrop      = isSpread ? (isMobile ? 4 : 7)   : (isMobile ? 1 : 2);
+        // Dynamic parameters based on spread state (5 Cards)
+        const rotateStep = isSpread ? (isMobile ? 9 : 12)  : (isMobile ? 3 : 4);
+        const xStep      = isSpread ? (isMobile ? 38 : 68) : (isMobile ? 15 : 26);
+        const yDrop      = isSpread ? (isMobile ? 5 : 8)   : (isMobile ? 1 : 2);
 
         const rotate = centerOffset * rotateStep;
         const tx     = centerOffset * xStep;
