@@ -1576,6 +1576,77 @@ footer {
   color: var(--text-main);
 }
 
+/* ---- Poker Controls (Mobile & Quick Nav) ---- */
+.poker-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 12px 0 20px;
+  z-index: 20;
+}
+
+.poker-ctrl-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.poker-ctrl-btn:hover,
+.poker-ctrl-btn:focus-visible {
+  border-color: var(--accent);
+  color: var(--text-main);
+  background: rgba(59, 130, 246, 0.2);
+  transform: scale(1.1);
+  outline: none;
+}
+
+.poker-ctrl-btn:active {
+  transform: scale(0.95);
+}
+
+.poker-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  backdrop-filter: blur(8px);
+}
+
+.poker-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.poker-dot:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+.poker-dot.active {
+  width: 24px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--blue-500), var(--purple-500));
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+}
+
 /* ---- Keyboard nav hint ---- */
 .poker-nav-hint {
   grid-column: 1 / -1;

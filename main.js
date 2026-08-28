@@ -612,9 +612,58 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
     updateFan();
   });
 
+  const dots   = document.querySelectorAll('.poker-dot');
+  const btnPrev = document.getElementById('poker-prev');
+  const btnNext = document.getElementById('poker-next');
+
+  // Update active indicator dot
+  function updateDots(index) {
+    if (!dots.length) return;
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  // Unified card selection logic
+  function selectCard(index) {
+    if (index < 0 || index >= projects.length) return;
+
+    if (activeIndex === index) {
+      closeCard();
+      return;
+    }
+
+    // Reset previous
+    cards.forEach(c => c.classList.remove('active', 'flipped'));
+    
+    // Open new
+    activeIndex = index;
+    updateDots(index);
+
+    const targetCard = document.querySelector(`.poker-card[data-index="${index}"]`);
+    if (targetCard) targetCard.classList.add('active');
+
+    // 1. Position fan
+    updateFan();
+
+    // 2. Wait for fan move, flip, show details
+    setTimeout(() => {
+      if (activeIndex === index) {
+        if (targetCard) targetCard.classList.add('flipped');
+        showDetail(index);
+
+        // Smooth scroll detail on mobile
+        if (window.innerWidth <= 900 && detail) {
+          detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    }, 400);
+  }
+
   // Reset to initial fan state
   function closeCard() {
     activeIndex = -1;
+    updateDots(-1);
     cards.forEach(c => {
       c.classList.remove('active', 'flipped');
     });
@@ -627,49 +676,80 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
     updateFan();
   }
 
-  // Handle click on card
-  cards.forEach((card, i) => {
-    const cardIdx = parseInt(card.dataset.index, 10);
-    card.addEventListener('click', () => {
-      if (activeIndex === cardIdx) {
-        // Double click: close
-        closeCard();
-        return;
-      }
+  // Navigation button handlers
+  if (btnPrev) {
+    btnPrev.addEventListener('click', () => {
+      const nextIdx = activeIndex <= 0 ? projects.length - 1 : activeIndex - 1;
+      selectCard(nextIdx);
+    });
+  }
 
-      // Close previous
-      cards.forEach(c => c.classList.remove('active', 'flipped'));
-      
-      // Open new
-      activeIndex = cardIdx;
-      card.classList.add('active');
-      
-      // 1. Move card to center (updateFan)
-      updateFan();
-      
-      // 2. Wait for move, then flip and show detail
-      setTimeout(() => {
-        if (activeIndex === cardIdx) {
-          card.classList.add('flipped');
-          showDetail(cardIdx);
-        }
-      }, 450);
+  if (btnNext) {
+    btnNext.addEventListener('click', () => {
+      const nextIdx = activeIndex === -1 ? 0 : (activeIndex + 1) % projects.length;
+      selectCard(nextIdx);
+    });
+  }
+
+  // Indicator dots handler
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.dataset.index, 10);
+      selectCard(idx);
+    });
+  });
+
+  // Handle click on card directly
+  cards.forEach((card) => {
+    const cardIdx = parseInt(card.dataset.index, 10);
+    card.addEventListener('click', (e) => {
+      e.stopPropagation();
+      selectCard(cardIdx);
     });
 
     // Keyboard support (Enter to click)
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        card.click();
+        selectCard(cardIdx);
       } else if (e.key === 'ArrowRight') {
-        const next = cards[i + 1] || cards[0];
-        next.focus();
+        const nextIdx = (cardIdx + 1) % projects.length;
+        selectCard(nextIdx);
       } else if (e.key === 'ArrowLeft') {
-        const prev = cards[i - 1] || cards[cards.length - 1];
-        prev.focus();
+        const prevIdx = (cardIdx - 1 + projects.length) % projects.length;
+        selectCard(prevIdx);
       }
     });
   });
+
+  // Touch Swipe Gesture Support for Mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  hand.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  hand.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    const dx = touchEndX - touchStartX;
+    const dy = touchEndY - touchStartY;
+
+    // Trigger only on horizontal swipe (>40px)
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) {
+        // Swipe left -> Next card
+        const nextIdx = activeIndex === -1 ? 0 : (activeIndex + 1) % projects.length;
+        selectCard(nextIdx);
+      } else {
+        // Swipe right -> Prev card
+        const prevIdx = activeIndex <= 0 ? projects.length - 1 : activeIndex - 1;
+        selectCard(prevIdx);
+      }
+    }
+  }, { passive: true });
 
   // Handle window resize to recalculate fan
   window.addEventListener('resize', () => {
@@ -693,7 +773,6 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
 
   // Listener for dynamic language switch while a card is open
   document.addEventListener('languageChanged', () => {
-    // Re-render open card details with new language
     if (activeIndex !== -1) {
       showDetail(activeIndex);
     }
