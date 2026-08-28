@@ -525,6 +525,27 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
       get desc() { return t('proj_3_desc'); },
       tags: ['HTML5 Semántico', 'CSS3 Avanzado', 'Responsive Design', 'UI / Frontend'],
       link: 'https://github.com/alejandro-xoxo/space-travel-ui'
+    },
+    {
+      icon: '🤖',
+      get title() { return t('proj_4_title'); },
+      get desc() { return t('proj_4_desc'); },
+      tags: ['Python', 'n8n', 'PostgreSQL', 'MQL4', 'Human-in-the-Loop', 'Telegram Bot API'],
+      link: 'https://github.com/alejandro-xoxo/Kronos_Bot'
+    },
+    {
+      icon: '📅',
+      get title() { return t('proj_5_title'); },
+      get desc() { return t('proj_5_desc'); },
+      tags: ['n8n', 'Telegram Bot API', 'Google Sheets DB', 'Flujos CRUD', 'Automatización Cron', 'Zero Cost'],
+      link: 'https://github.com/alejandro-xoxo/Proyecto_IA_Nivel1_AcevedoMiguel'
+    },
+    {
+      icon: '🧠',
+      get title() { return t('proj_6_title'); },
+      get desc() { return t('proj_6_desc'); },
+      tags: ['Python', 'Agentes IA', 'Three.js 3D', 'Resiliencia & Circuit Breakers', 'Aprendizaje / Lección'],
+      link: 'https://github.com/alejandro-xoxo/Milo'
     }
   ];
 
@@ -577,9 +598,9 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
         const centerOffset = i - (total - 1) / 2;
         
         // Spread parameters
-        const rotateStep = isMobile ? 12 : 16;
-        const xStep      = isMobile ? 45 : 70;
-        const yDrop      = isMobile ? 8  : 14;
+        const rotateStep = isMobile ? 7 : 9;
+        const xStep      = isMobile ? 30 : 56;
+        const yDrop      = isMobile ? 4  : 7;
 
         const rotate = centerOffset * rotateStep;
         const tx     = centerOffset * xStep;

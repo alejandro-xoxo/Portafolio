@@ -4,49 +4,54 @@
    DESIGN TOKENS
    ============================================================ */
 :root {
-  /* ── Backgrounds: pure blacks and deep abyss ── */
-  --bg-void:       #000000;
-  --bg-deep:       #01020a;          /* Oscuros más oscuros */
-  --bg-surface:    #030510;
-  --bg-card:       rgba(3, 5, 12, 0.75);
-  --bg-card-hover: rgba(5, 8, 20, 0.85);
+  /* ── Backgrounds: negros y azules oscuros, sobrios ── */
+  --bg-void:       #05070D;
+  --bg-deep:       #0B0F1A;
+  --bg-surface:    #10182B;
+  --bg-card:       rgba(11, 15, 26, 0.75);
+  --bg-card-hover: rgba(16, 24, 43, 0.85);
 
-  /* ── Blue scale (Azules más azules, más vibrantes y puros) ── */
+  /* ── Blue scale — acento estructural, moderado en estado normal ── */
   --blue-900:      #01081a;
   --blue-800:      #041029;
   --blue-700:      #0a1d4d;
   --blue-600:      #123691;
-  --blue-500:      #1d4ed8;          /* Azul profundo puro */
-  --blue-400:      #2563eb;          /* Azul primario vibrante */
-  --blue-300:      #3b82f6;
-  --blue-200:      #93c5fd;
+  --blue-500:      #1E3A8A;          /* Azul medio, uso normal */
+  --blue-400:      #2563EB;          /* Azul primario, uso normal */
+  --blue-300:      #3B82F6;
+  --blue-200:      #A5F3FC;          /* Pastel celeste — reservado a hover */
 
-  /* ── Purple scale (Más morado) ── */
-  --purple-700:    #4c1d95;
-  --purple-600:    #5b21b6;
-  --purple-500:    #7c3aed;          /* Morado más intenso */
-  --purple-400:    #8b5cf6;
-  --purple-300:    #a78bfa;
+  /* ── Purple/indigo scale — atenuado, no neón ── */
+  --purple-700:    #312e81;
+  --purple-600:    #3730a5;
+  --purple-500:    #4c46b6;
+  --purple-400:    #6f65d6;
+  --purple-300:    #C4B5FD;          /* Pastel lavanda — reservado a hover */
 
-  /* ── Accent tokens (ENFATIZANDO EL MORADO) ── */
-  --accent:        #7c3aed;          /* Stronger purple */
-  --accent-bright: #8b5cf6;          /* Lighter purple */
-  --accent-sec:    #2563eb;          /* Bluer blue */
-  --accent-sec-bright: #3b82f6;      
-  /* Reduciendo iluminaciones excesivas */
-  --accent-glow:   rgba(124, 58, 237, 0.15);  
-  --accent-glow2:  rgba(37, 99, 235, 0.10); 
-  --accent-neon:   #a78bfa;
+  /* ── Accent tokens — azul moderado por defecto, pastel solo en hover ── */
+  --accent:        #2563EB;
+  --accent-bright: #3B82F6;
+  --accent-sec:    #2563eb;
+  --accent-sec-bright: #3b82f6;
+  --accent-glow:   rgba(37, 99, 235, 0.12);
+  --accent-glow2:  rgba(37, 99, 235, 0.08);
+  --accent-neon:   #C4B5FD;          /* Pastel lavanda — glows de hover */
+
+  /* ── Pasteles brillantes — SOLO hover/focus/active ── */
+  --pastel-lavender: #C4B5FD;
+  --pastel-sky:       #A5F3FC;
+  --pastel-pink:      #FBCFE8;
+  --pastel-mint:      #A7F3D0;
 
   /* ── Text ── */
-  --text-main:     #f0f4f8;
-  --text-muted:    #8b9dc3;
+  --text-main:     #E6E9F0;
+  --text-muted:    #8892A6;
   --text-faint:    #404d6b;
 
   /* ── Borders ── */
-  --border:        rgba(37, 99, 235, 0.10);
-  --border-bright: rgba(37, 99, 235, 0.20);
-  --border-sec:    rgba(124, 58, 237, 0.15);
+  --border:        rgba(30, 58, 138, 0.22);
+  --border-bright: rgba(37, 99, 235, 0.35);
+  --border-sec:    rgba(196, 181, 253, 0.18);
 
   --radius-sm:     6px;
   --radius-md:     12px;
@@ -126,7 +131,7 @@ header.scrolled {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 30px rgba(168, 85, 247, 0.08);
+  box-shadow: 0 4px 30px rgba(196, 181, 253, 0.08);
 }
 
 .nav-container {
@@ -368,7 +373,7 @@ header.scrolled {
 .btn-ghost:hover {
   color: var(--text-main);
   border-color: var(--border-bright);
-  background: rgba(168, 85, 247, 0.08);
+  background: rgba(196, 181, 253, 0.08);
   transform: translateY(-2px);
 }
 
@@ -498,7 +503,7 @@ section {
 .stat-card:hover {
   border-color: var(--border-bright);
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(168, 85, 247, 0.12);
+  box-shadow: 0 20px 40px rgba(196, 181, 253, 0.10);
 }
 
 .stat-card:hover::before { opacity: 1; }
@@ -574,8 +579,8 @@ section {
 .project-card:hover {
   border-color: var(--border-bright);
   box-shadow:
-    0 30px 70px rgba(168, 85, 247, 0.2),
-    0 0 0 1px rgba(168, 85, 247, 0.08);
+    0 30px 70px rgba(196, 181, 253, 0.14),
+    0 0 0 1px rgba(196, 181, 253, 0.08);
   background: var(--bg-card-hover);
 }
 
@@ -586,7 +591,7 @@ section {
   width: 48px;
   height: 48px;
   border-radius: var(--radius-sm);
-  background: rgba(168, 85, 247, 0.15);
+  background: rgba(196, 181, 253, 0.12);
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -670,7 +675,7 @@ section {
   position: absolute;
   top: 50%; left: 50%;
   width: 1000px; height: 500px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(37, 99, 235, 0.05) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(76, 70, 182, 0.14) 0%, rgba(37, 99, 235, 0.05) 40%, transparent 70%);
   transform: translate(-50%, -50%);
   z-index: 0;
   pointer-events: none;
@@ -731,7 +736,7 @@ section {
 }
 .mission-card:hover {
   border-color: var(--purple-500);
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 10px 30px rgba(76, 70, 182, 0.14);
 }
 .mission-card .quote-mark {
   color: var(--purple-500);
@@ -923,7 +928,7 @@ section {
 /* ---- Stat card hover (JS tilt override) ---- */
 .stat-card:hover {
   border-color: var(--border-bright);
-  box-shadow: 0 20px 40px rgba(168, 85, 247, 0.12);
+  box-shadow: 0 20px 40px rgba(196, 181, 253, 0.10);
 }
 
 .stat-card:hover::before { opacity: 1; }
@@ -1114,8 +1119,8 @@ footer {
 }
 
 .interest-card.cybersec .interest-icon-wrap {
-  background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(167,139,250,0.1));
-  border: 1px solid rgba(139,92,246,0.25);
+  background: linear-gradient(135deg, rgba(196,181,253,0.16), rgba(167,139,250,0.1));
+  border: 1px solid rgba(196,181,253,0.20);
 }
 
 .interest-title {
@@ -1155,9 +1160,9 @@ footer {
 }
 
 .interest-card.cybersec .topic-pill {
-  background: rgba(139,92,246,0.1);
+  background: rgba(196,181,253,0.10);
   color: var(--purple-300);
-  border: 1px solid rgba(139,92,246,0.2);
+  border: 1px solid rgba(196,181,253,0.16);
 }
 
 /* ============================================================
@@ -1225,7 +1230,7 @@ footer {
   background: radial-gradient(
     circle,
     rgba(59, 130, 246, 0.07) 0%,
-    rgba(139, 92, 246, 0.04) 50%,
+    rgba(196, 181, 253, 0.04) 50%,
     transparent 70%
   );
   pointer-events: none;
@@ -1279,10 +1284,13 @@ footer {
 }
 
 /* Fan positions assigned by JS, but also via nth-child for CSS-only fallback */
-.poker-card:nth-child(1) { transform: rotate(-24deg) translateX(-210px) translateY(16px); z-index: 1; }
-.poker-card:nth-child(2) { transform: rotate(-8deg)  translateX(-70px)  translateY(4px);  z-index: 2; }
-.poker-card:nth-child(3) { transform: rotate(8deg)   translateX(70px)   translateY(4px);  z-index: 2; }
-.poker-card:nth-child(4) { transform: rotate(24deg)  translateX(210px)  translateY(16px); z-index: 1; }
+.poker-card:nth-child(1) { transform: rotate(-27deg) translateX(-240px) translateY(24px); z-index: 1; }
+.poker-card:nth-child(2) { transform: rotate(-18deg) translateX(-160px) translateY(12px); z-index: 2; }
+.poker-card:nth-child(3) { transform: rotate(-9deg)  translateX(-80px)  translateY(4px);  z-index: 3; }
+.poker-card:nth-child(4) { transform: rotate(0deg)   translateX(0px)    translateY(0px);  z-index: 4; }
+.poker-card:nth-child(5) { transform: rotate(9deg)   translateX(80px)   translateY(4px);  z-index: 3; }
+.poker-card:nth-child(6) { transform: rotate(18deg)  translateX(160px)  translateY(12px); z-index: 2; }
+.poker-card:nth-child(7) { transform: rotate(27deg)  translateX(240px)  translateY(24px); z-index: 1; }
 
 .poker-card:hover {
   filter: drop-shadow(0 0 20px rgba(59,130,246,0.45));
@@ -1604,10 +1612,13 @@ footer {
     width: 150px;
     height: 225px;
   }
-  .poker-card:nth-child(1) { transform: rotate(-18deg) translateX(-130px) translateY(12px); }
-  .poker-card:nth-child(2) { transform: rotate(-6deg)  translateX(-43px)  translateY(3px);  }
-  .poker-card:nth-child(3) { transform: rotate(6deg)   translateX(43px)   translateY(3px);  }
-  .poker-card:nth-child(4) { transform: rotate(18deg)  translateX(130px)  translateY(12px); }
+  .poker-card:nth-child(1) { transform: rotate(-21deg) translateX(-150px) translateY(15px); }
+  .poker-card:nth-child(2) { transform: rotate(-14deg) translateX(-100px) translateY(8px); }
+  .poker-card:nth-child(3) { transform: rotate(-7deg)  translateX(-50px)  translateY(3px); }
+  .poker-card:nth-child(4) { transform: rotate(0deg)   translateX(0px)    translateY(0px); }
+  .poker-card:nth-child(5) { transform: rotate(7deg)   translateX(50px)   translateY(3px); }
+  .poker-card:nth-child(6) { transform: rotate(14deg)  translateX(100px)  translateY(8px); }
+  .poker-card:nth-child(7) { transform: rotate(21deg)  translateX(150px)  translateY(15px); }
   .card-face-icon { font-size: 1.8rem; }
   .card-face-title { font-size: 0.8rem; }
   .poker-detail-card { padding: 20px; }
@@ -1679,7 +1690,7 @@ body { animation: page-enter 0.6s ease forwards; }
 }
 .orb-2 {
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(139,92,246,0.06), transparent 70%);
+  background: radial-gradient(circle, rgba(196,181,253,0.05), transparent 70%);
   bottom: 20%; right: -80px;
   animation-duration: 22s;
   animation-delay: -6s;
