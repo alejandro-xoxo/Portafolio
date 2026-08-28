@@ -550,14 +550,19 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
   ];
 
   let activeIndex = -1;
+  let isHovered = false;
 
   // Render detail panel
   function showDetail(index) {
-    const p = projects[index];
-    if (!p) return;
+    const idx = typeof index === 'number' ? index : parseInt(index, 10);
+    const p = projects[idx];
+    if (!p) {
+      console.warn("Project data missing for index:", idx);
+      return;
+    }
 
     detail.innerHTML = `
-      <div class="poker-detail-card">
+      <div class="poker-detail-card" style="animation: fade-in 0.35s ease both;">
         <button class="detail-close" aria-label="Cerrar detalle" data-i18n="proj_btn_back">${t('proj_btn_back')}</button>
         <div class="detail-header">
           <div class="detail-icon" aria-hidden="true">${p.icon}</div>
@@ -581,39 +586,48 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
     closeBtn.addEventListener('click', closeCard);
   }
 
-  // Calculate fan transforms
+  // Calculate fan transforms (Compact in repose, expands when hovered/active)
   function updateFan() {
     const isMobile = window.innerWidth <= 700;
     const total = cards.length;
+    const isSpread = isHovered || activeIndex !== -1;
     
     cards.forEach((card, i) => {
-      if (card.classList.contains('active')) {
+      const idx = parseInt(card.dataset.index, 10);
+      if (idx === activeIndex || card.classList.contains('active')) {
         // Active card pulls up and pops forward in 3D space
         card.style.transform = isMobile 
           ? 'rotate(0deg) translateX(0) translateY(0) translateZ(150px) scale(1.15)'
           : 'rotate(0deg) translateX(0) translateY(0) translateZ(200px) scale(1.2)';
         card.style.zIndex = '100';
       } else {
-        // Normal fan position
+        // Normal fan position (Compact when idle, spread when hovered/active)
         const centerOffset = i - (total - 1) / 2;
         
-        // Spread parameters
-        const rotateStep = isMobile ? 7 : 9;
-        const xStep      = isMobile ? 30 : 56;
-        const yDrop      = isMobile ? 4  : 7;
+        // Dynamic parameters based on spread state
+        const rotateStep = isSpread ? (isMobile ? 7 : 9)  : (isMobile ? 2.5 : 3.5);
+        const xStep      = isSpread ? (isMobile ? 30 : 54) : (isMobile ? 12 : 22);
+        const yDrop      = isSpread ? (isMobile ? 4 : 7)   : (isMobile ? 1 : 2);
 
         const rotate = centerOffset * rotateStep;
         const tx     = centerOffset * xStep;
         const ty     = Math.abs(centerOffset) * yDrop;
-        const scale  = 1;
 
-        card.style.transform = `rotate(${rotate}deg) translateX(${tx}px) translateY(${ty}px) scale(${scale})`;
-        
-        // Side cards go behind inner cards slightly
+        card.style.transform = `rotate(${rotate}deg) translateX(${tx}px) translateY(${ty}px) scale(1)`;
         card.style.zIndex = 10 - Math.abs(centerOffset);
       }
     });
   }
+
+  // Hover detection for deck expand/compact transition
+  hand.addEventListener('mouseenter', () => {
+    isHovered = true;
+    updateFan();
+  });
+  hand.addEventListener('mouseleave', () => {
+    isHovered = false;
+    updateFan();
+  });
 
   // Reset to initial fan state
   function closeCard() {
@@ -632,8 +646,9 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
 
   // Handle click on card
   cards.forEach((card, i) => {
+    const cardIdx = parseInt(card.dataset.index, 10);
     card.addEventListener('click', () => {
-      if (activeIndex === i) {
+      if (activeIndex === cardIdx) {
         // Double click: close
         closeCard();
         return;
@@ -643,7 +658,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
       cards.forEach(c => c.classList.remove('active', 'flipped'));
       
       // Open new
-      activeIndex = i;
+      activeIndex = cardIdx;
       card.classList.add('active');
       
       // 1. Move card to center (updateFan)
@@ -651,9 +666,9 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
       
       // 2. Wait for move, then flip and show detail
       setTimeout(() => {
-        if (activeIndex === i) {
+        if (activeIndex === cardIdx) {
           card.classList.add('flipped');
-          showDetail(i);
+          showDetail(cardIdx);
         }
       }, 450);
     });
@@ -675,7 +690,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
 
   // Handle window resize to recalculate fan
   window.addEventListener('resize', () => {
-    if (activeIndex === -1) updateFan();
+    updateFan();
   });
 
   // Reveal animation for the hand
