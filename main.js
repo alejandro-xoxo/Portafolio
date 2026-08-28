@@ -527,11 +527,11 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
       link: 'https://github.com/alejandro-xoxo/Milo'
     },
     {
-      icon: '<img src="src/icons/tux.png" alt="Linux" class="custom-icon">',
+      icon: '🛒',
       get title() { return t('proj_4_title'); },
       get desc() { return t('proj_4_desc'); },
-      tags: ['Arch Linux', 'Bash Scripting', 'Hyprland Workstation', 'Sysadmin', 'Low-Level Tuning'],
-      link: 'https://github.com/alejandro-xoxo/Miarch'
+      tags: ['JavaScript ES6+', 'Lógica de Carrito', 'Arquitectura Modular', 'Web Storage', 'CSS3 Avanzado'],
+      link: 'https://github.com/alejandro-xoxo/Proyecto_E-commerce_AcevedoMiguel'
     }
   ];
 

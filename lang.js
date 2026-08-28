@@ -84,8 +84,8 @@ window.translations = {
     proj_2_desc: "Asistente inteligente en Telegram para gestión de agenda, tareas, hábitos y listas. Desarrollado con n8n Community Edition y Google Sheets como base de datos de <strong style=\"color:var(--text-main)\">cero costo cloud</strong>. Destaca por su algoritmo anti-solapamiento de citas, 6 módulos de analítica de productividad, resúmenes automáticos por Cron y auditoría estricta de usuarios y roles.",
     proj_3_title: "Milo — Arquitectura de Agente IA Autónomo",
     proj_3_desc: "Proyecto pionero en orquestación de Agentes de IA autónomos con avatar 3D interactivo (Three.js), interacción por voz y arquitectura de doble motor (\"Zero API Keys\"). Fue el catalizador clave para <strong style=\"color:var(--text-main)\">dominar el diseño de agentes resilientes</strong>, patrones Circuit Breaker, autogeneración de skills y colas de tareas asíncronas.",
-    proj_4_title: "Linux Infrastructure & Workstation Hyprland",
-    proj_4_desc: "Automatización y estandarización del entorno de desarrollo nativo en Linux. Scripts de bajo nivel para aprovisionamiento del sistema, optimización de recursos, entorno de terminal personalizado y gestión de ventanas con <strong style=\"color:var(--text-main)\">Hyprland</strong>, diseñados para maximizar la eficiencia y velocidad de desarrollo sin sobreingeniería.",
+    proj_4_title: "E-Commerce Platform — Arquitectura Full Stack & Lógica de Negocio",
+    proj_4_desc: "Aplicación de comercio electrónico modular construida con Javascript nativo (ES6+), arquitectura basada en componentes visuales y <strong style=\"color:var(--text-main)\">gestión avanzada del estado del carrito de compras</strong>. Incluye persistencia de datos local, filtrado dinámico de catálogo y diseño responsivo, demostrando dominio en los fundamentos del desarrollo web moderno sin dependencia de frameworks pesados.",
     proj_btn_back: "Volver a baraja",
     proj_btn_code: "Ver código fuente",
     
@@ -190,8 +190,8 @@ window.translations = {
     proj_2_desc: "High-performance conversational assistant on Telegram for scheduling, tasks, habits, and lists. Built with n8n Community Edition and Google Sheets DB (<strong style=\"color:var(--text-main)\">Zero Cloud Cost</strong>). Features smart anti-collision algorithms for time slots, 6 productivity analytics engines, automated Cron daily summaries, and role-based audit logging.",
     proj_3_title: "Milo — Autonomous AI Agent System Architecture",
     proj_3_desc: "Pioneering autonomous AI Agent project featuring an interactive 3D avatar (Three.js), real-time voice processing, and dual-engine architecture (\"Zero API Keys\"). Served as the core catalyst to <strong style=\"color:var(--text-main)\">master resilient agent workflows</strong>, Circuit Breaker patterns, self-generating skill pipelines, and async task queues.",
-    proj_4_title: "Linux Infrastructure & Hyprland Workstation",
-    proj_4_desc: "Automation and low-level optimization of a personal Linux development environment. Provisioning scripts, kernel-level resource tuning, custom CLI workflows, and <strong style=\"color:var(--text-main)\">Hyprland</strong> window management engineered for zero-friction developer productivity and absolute system control.",
+    proj_4_title: "E-Commerce Platform — Full Stack Architecture & Business Logic",
+    proj_4_desc: "Modular e-commerce web application built with native JavaScript (ES6+), component-driven visual architecture, and <strong style=\"color:var(--text-main)\">advanced shopping cart state management</strong>. Features local data persistence, dynamic catalog filtering, and responsive UX, demonstrating mastery of modern web fundamentals without heavy framework dependencies.",
     proj_btn_back: "Back to deck",
     proj_btn_code: "View source code",
     
