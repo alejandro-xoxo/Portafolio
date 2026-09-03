@@ -547,12 +547,13 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
       return;
     }
 
+    detail.setAttribute('aria-hidden', 'false');
     detail.innerHTML = `
       <div class="poker-detail-card" style="animation: fade-in 0.35s ease both;">
-        <button class="detail-close" aria-label="Cerrar detalle" data-i18n="proj_btn_back">${t('proj_btn_back')}</button>
         <div class="detail-header">
           <div class="detail-icon" aria-hidden="true">${p.icon}</div>
           <h3 class="detail-title">${p.title}</h3>
+          <button class="detail-close" aria-label="Cerrar detalle" data-i18n="proj_btn_back" style="margin-left: auto;">${t('proj_btn_back')}</button>
         </div>
         <p class="detail-desc">${p.desc}</p>
         <div class="detail-tags">
@@ -580,6 +581,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
     
     cards.forEach((card, i) => {
       const idx = parseInt(card.dataset.index, 10);
+      const centerOffset = idx - (total - 1) / 2;
       if (idx === activeIndex || card.classList.contains('active')) {
         // Active card pulls up and pops forward in 3D space
         card.style.transform = isMobile 

@@ -1252,8 +1252,15 @@ footer {
 @media (max-width: 900px) {
   .poker-scene {
     grid-template-columns: 1fr;
-    flex-direction: column;
+    gap: 32px;
   }
+}
+
+.poker-deck-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 /* ---- The hand (fan area) ---- */

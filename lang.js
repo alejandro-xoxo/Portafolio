@@ -73,7 +73,7 @@ window.translations = {
     projects_label: "Proyectos",
     projects_title: "Trabajo seleccionado.",
     projects_subtitle: "Elige una carta para explorar el proyecto.",
-    projects_hint: "<span>↑</span> Haz click en una carta para ver el detalle",
+    projects_hint: "<span>←</span> Haz click en una carta para ver el detalle",
     projects_nav: "<kbd>←</kbd><kbd>→</kbd> navegar &nbsp;·&nbsp; <kbd>Enter</kbd> seleccionar",
     
     proj_0_title: "Kronos Bot — Copy-Trading 100% Autónomo & Gestión de Riesgo",
@@ -179,7 +179,7 @@ window.translations = {
     projects_label: "Projects",
     projects_title: "Selected Work.",
     projects_subtitle: "Pick a card to explore the project.",
-    projects_hint: "<span>↑</span> Click on a card to see details",
+    projects_hint: "<span>←</span> Click on a card to see details",
     projects_nav: "<kbd>←</kbd><kbd>→</kbd> navigate &nbsp;·&nbsp; <kbd>Enter</kbd> select",
     
     proj_0_title: "Kronos Bot — 100% Autonomous MT4 Copy-Trading & Risk Engine",

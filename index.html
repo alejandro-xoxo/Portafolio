@@ -258,8 +258,10 @@
         <!-- POKER DECK SCENE -->
         <div class="poker-scene reveal" id="poker-scene" aria-label="Baraja de proyectos">
 
-          <!-- Hand of cards (Top 5 Projects) -->
-          <div class="poker-hand" id="poker-hand" role="list">
+          <!-- Left column: Cards & Navigation controls -->
+          <div class="poker-deck-col">
+            <!-- Hand of cards (Top 5 Projects) -->
+            <div class="poker-hand" id="poker-hand" role="list">
 
             <!-- Card 1: Kronos Bot -->
             <div class="poker-card" data-index="0" role="listitem" tabindex="0"
@@ -366,37 +368,38 @@
               </div>
             </div>
 
-          </div><!-- /poker-hand -->
+            </div><!-- /poker-hand -->
 
-          <!-- Mobile & Interactive Navigation Controls -->
-          <div class="poker-controls" id="poker-controls">
-            <button class="poker-ctrl-btn ctrl-prev" id="poker-prev" aria-label="Proyecto anterior" title="Anterior">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-            </button>
-            
-            <div class="poker-dots" id="poker-dots" role="tablist" aria-label="Seleccionar proyecto">
-              <button class="poker-dot active" data-index="0" aria-label="Proyecto 1: Kronos Bot"></button>
-              <button class="poker-dot" data-index="1" aria-label="Proyecto 2: Campus Guardian AI"></button>
-              <button class="poker-dot" data-index="2" aria-label="Proyecto 3: AgendaBot"></button>
-              <button class="poker-dot" data-index="3" aria-label="Proyecto 4: Milo AI"></button>
-              <button class="poker-dot" data-index="4" aria-label="Proyecto 5: E-Commerce Platform"></button>
+            <!-- Mobile & Interactive Navigation Controls -->
+            <div class="poker-controls" id="poker-controls">
+              <button class="poker-ctrl-btn ctrl-prev" id="poker-prev" aria-label="Proyecto anterior" title="Anterior">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              
+              <div class="poker-dots" id="poker-dots" role="tablist" aria-label="Seleccionar proyecto">
+                <button class="poker-dot active" data-index="0" aria-label="Proyecto 1: Kronos Bot"></button>
+                <button class="poker-dot" data-index="1" aria-label="Proyecto 2: Campus Guardian AI"></button>
+                <button class="poker-dot" data-index="2" aria-label="Proyecto 3: AgendaBot"></button>
+                <button class="poker-dot" data-index="3" aria-label="Proyecto 4: Milo AI"></button>
+                <button class="poker-dot" data-index="4" aria-label="Proyecto 5: E-Commerce Platform"></button>
+              </div>
+
+              <button class="poker-ctrl-btn ctrl-next" id="poker-next" aria-label="Siguiente proyecto" title="Siguiente">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </button>
             </div>
 
-            <button class="poker-ctrl-btn ctrl-next" id="poker-next" aria-label="Siguiente proyecto" title="Siguiente">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </button>
-          </div>
+            <!-- Keyboard hint -->
+            <div class="poker-nav-hint" aria-hidden="true">
+              <span data-i18n="projects_nav"><kbd>←</kbd><kbd>→</kbd> navegar &nbsp;·&nbsp; <kbd>Enter</kbd> seleccionar</span>
+            </div>
+          </div><!-- /poker-deck-col -->
 
           <!-- Detail panel (populated by JS) -->
           <div class="poker-detail" id="poker-detail" aria-live="polite">
             <p class="poker-hint" data-i18n="projects_hint">
-              <span>↑</span> Haz click en una carta para ver el detalle
+              <span>←</span> Haz click en una carta para ver el detalle
             </p>
-          </div>
-
-          <!-- Keyboard hint -->
-          <div class="poker-nav-hint" aria-hidden="true">
-            <span data-i18n="projects_nav"><kbd>←</kbd><kbd>→</kbd> navegar &nbsp;·&nbsp; <kbd>Enter</kbd> seleccionar</span>
           </div>
 
         </div><!-- /poker-scene -->
