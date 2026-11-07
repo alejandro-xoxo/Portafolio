@@ -2166,3 +2166,13 @@ footer {
   .nav-links::-webkit-scrollbar { display: none; }
   .nav-links a, .nav-links .btn-lang { flex: 0 0 auto; white-space: nowrap; }
 }
+
+/* Usuario de WhatsApp en el footer (texto seleccionable de un clic, para copiarlo). */
+.footer-links .footer-handle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-handle-user { user-select: all; color: var(--text-main); }
