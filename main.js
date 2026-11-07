@@ -2,8 +2,6 @@
    main.js  –  Three.js 3D Hero + All Portfolio Interactions
    ============================================================ */
 
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js';
-
 /* ============================================================
    1.  THREE.JS – HERO PARTICLE NETWORK
    ============================================================ */
@@ -11,11 +9,26 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
   const canvas  = document.getElementById('hero-canvas');
   const section = document.querySelector('.hero');
   if (!canvas || !section) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const conn = navigator.connection || {};
+  if (conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '')) return;
+
+  // Three.js (build minificado) se descarga después del evento load y en reposo:
+  // así no bloquea el resto del JavaScript de la página.
+  const THREE_URL = 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js';
+  const boot = () => import(THREE_URL).then(buildScene).catch(() => {});
+  const schedule = () => ('requestIdleCallback' in window)
+    ? requestIdleCallback(boot, { timeout: 3000 })
+    : setTimeout(boot, 1200);
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
+
+  function buildScene(THREE) {
 
   /* --- Renderer ------------------------------------------- */
   const isMobile = window.innerWidth < 768;
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 2));
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: !isMobile, alpha: true, powerPreference: 'default' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 1.5));
   renderer.setClearColor(0x000000, 0);
 
   /* --- Scene & Camera ------------------------------------- */
@@ -188,6 +201,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
     renderer.render(scene, camera);
   }
   animate();
+  }
 })();
 
 
@@ -195,14 +209,22 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
    2.  CURSOR GLOW
    ============================================================ */
 (function initCursorGlow() {
+  if (window.matchMedia && !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   const glow = document.createElement('div');
   glow.className = 'cursor-glow';
   document.body.appendChild(glow);
 
+  let x = 0, y = 0, queued = false;
   document.addEventListener('mousemove', (e) => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top  = e.clientY + 'px';
-  });
+    x = e.clientX; y = e.clientY;
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      glow.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+      glow.classList.add('is-active');
+      queued = false;
+    });
+  }, { passive: true });
 })();
 
 
@@ -431,7 +453,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
   if (!p) return;
   p.style.opacity   = '0';
   p.style.transform = 'translateY(24px)';
-  p.style.transition = 'opacity 0.7s 0.8s ease, transform 0.7s 0.8s ease';
+  p.style.transition = 'opacity 0.6s 0.3s ease, transform 0.6s 0.3s ease';
   // Trigger after paint
   requestAnimationFrame(() => requestAnimationFrame(() => {
     p.style.opacity   = '1';
@@ -443,7 +465,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
   if (actions) {
     actions.style.opacity    = '0';
     actions.style.transform  = 'translateY(24px)';
-    actions.style.transition = 'opacity 0.7s 1s ease, transform 0.7s 1s ease';
+    actions.style.transition = 'opacity 0.6s 0.45s ease, transform 0.6s 0.45s ease';
     requestAnimationFrame(() => requestAnimationFrame(() => {
       actions.style.opacity   = '1';
       actions.style.transform = 'translateY(0)';
@@ -499,39 +521,50 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
   // Project Database (Top 5 Featured Projects)
   const projects = [
     {
-      icon: '🤖',
-      get title() { return t('proj_0_title'); },
-      get desc() { return t('proj_0_desc'); },
-      tags: ['Trading Algorítmico', 'Python', 'MT4 / MQL4', 'Gestión de Riesgo', 'n8n', 'Telegram API'],
-      link: 'https://github.com/alejandro-xoxo/Kronos_Bot'
-    },
-    {
       icon: '⚡',
-      get title() { return t('proj_1_title'); },
-      get desc() { return t('proj_1_desc'); },
-      tags: ['Hackathon 1st Place', 'Agentes IA', 'Vision AI', 'Gemini API', 'Liderazgo & Agile'],
+      get title() { return t('proj_0_title'); },
+      get desc()  { return t('proj_0_desc'); },
+      get role()  { return t('proj_0_role'); },
+      get key()   { return t('proj_0_key'); },
+      tags: ['Python', 'Streamlit', 'YOLOv8', 'MediaPipe', 'Gemini API'],
       link: 'https://github.com/alejandro-xoxo/HachatonCampuslans2026'
     },
     {
-      icon: '📅',
-      get title() { return t('proj_2_title'); },
-      get desc() { return t('proj_2_desc'); },
-      tags: ['n8n Engine', 'Telegram Bot API', 'Google Sheets DB', 'Automatización Cron', 'Zero-Cloud Cost'],
-      link: 'https://github.com/alejandro-xoxo/Proyecto_IA_Nivel1_AcevedoMiguel'
+      icon: '🏫',
+      get title() { return t('proj_1_title'); },
+      get desc()  { return t('proj_1_desc'); },
+      get role()  { return t('proj_1_role'); },
+      get key()   { return t('proj_1_key'); },
+      tags: ['Java 17', 'Maven', 'MySQL 8', 'JDBC', 'JUnit 5', 'PDFBox'],
+      link: 'https://github.com/alejandro-xoxo/little-horizons-erp'
     },
     {
       icon: '🧠',
-      get title() { return t('proj_3_title'); },
-      get desc() { return t('proj_3_desc'); },
-      tags: ['Arquitectura Agentes IA', 'Python', 'Three.js 3D', 'Circuit Breakers', 'Asynchronous Queues'],
+      get title() { return t('proj_2_title'); },
+      get desc()  { return t('proj_2_desc'); },
+      get role()  { return t('proj_2_role'); },
+      get key()   { return t('proj_2_key'); },
+      tags: ['Python', 'Three.js', 'SQLite', 'Circuit Breaker', 'Voz (ffmpeg / gTTS)'],
       link: 'https://github.com/alejandro-xoxo/Milo'
+    },
+    {
+      icon: '📅',
+      get title() { return t('proj_3_title'); },
+      get desc()  { return t('proj_3_desc'); },
+      get role()  { return t('proj_3_role'); },
+      get key()   { return t('proj_3_key'); },
+      tags: ['n8n', 'Telegram Bot API', 'Google Sheets', 'Cron'],
+      link: 'https://github.com/alejandro-xoxo/Proyecto_IA_Nivel1_AcevedoMiguel'
     },
     {
       icon: '🛒',
       get title() { return t('proj_4_title'); },
-      get desc() { return t('proj_4_desc'); },
-      tags: ['JavaScript ES6+', 'Lógica de Carrito', 'Arquitectura Modular', 'Web Storage', 'CSS3 Avanzado'],
-      link: 'https://github.com/alejandro-xoxo/Proyecto_E-commerce_AcevedoMiguel'
+      get desc()  { return t('proj_4_desc'); },
+      get role()  { return t('proj_4_role'); },
+      get key()   { return t('proj_4_key'); },
+      tags: ['JavaScript ES6+', 'HTML5', 'CSS3', 'Web Storage'],
+      link: 'https://github.com/alejandro-xoxo/Proyecto_E-commerce_AcevedoMiguel',
+      demo: 'https://alejandro-xoxo.github.io/Proyecto_E-commerce_AcevedoMiguel/'
     }
   ];
 
@@ -556,14 +589,21 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.m
           <button class="detail-close" aria-label="Cerrar detalle" data-i18n="proj_btn_back" style="margin-left: auto;">${t('proj_btn_back')}</button>
         </div>
         <p class="detail-desc">${p.desc}</p>
+        <div class="detail-meta">
+          <div class="detail-meta-row"><span class="detail-meta-label">${t('proj_lbl_role')}</span><span class="detail-meta-text">${p.role}</span></div>
+          <div class="detail-meta-row"><span class="detail-meta-label">${t('proj_lbl_key')}</span><span class="detail-meta-text">${p.key}</span></div>
+        </div>
         <div class="detail-tags">
           ${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
         </div>
         <div class="detail-footer">
-          <a href="${p.link}" target="_blank" rel="noopener" class="detail-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            <span data-i18n="proj_btn_code">${t('proj_btn_code')}</span>
-          </a>
+          <div class="detail-links">
+            <a href="${p.link}" target="_blank" rel="noopener" class="detail-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span data-i18n="proj_btn_code">${t('proj_btn_code')}</span>
+            </a>
+            ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener" class="detail-link"><span data-i18n="proj_btn_demo">${t('proj_btn_demo')}</span> ↗</a>` : ''}
+          </div>
         </div>
       </div>
     `;
