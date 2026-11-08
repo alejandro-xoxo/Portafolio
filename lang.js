@@ -2,6 +2,7 @@ window.translations = {
   es: {
     lang_btn: "EN",
     nav_about: "Sobre mí",
+    nav_interests: "Intereses",
     nav_stack: "Ecosistema",
     nav_projects: "Proyectos",
     nav_interests: "Intereses",
@@ -105,6 +106,7 @@ window.translations = {
   en: {
     lang_btn: "ES",
     nav_about: "About",
+    nav_interests: "Interests",
     nav_stack: "Ecosystem",
     nav_projects: "Projects",
     nav_interests: "Interests",

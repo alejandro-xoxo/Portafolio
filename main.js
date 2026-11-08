@@ -242,6 +242,37 @@
 
 
 /* ============================================================
+   3b. MENÚ DESPLEGABLE EN MÓVIL
+   ============================================================ */
+(function initMobileMenu() {
+  const header = document.querySelector('header');
+  const toggle = document.getElementById('nav-toggle');
+  const nav    = document.getElementById('nav-links');
+  if (!header || !toggle || !nav) return;
+
+  const setOpen = (open) => {
+    header.classList.toggle('nav-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+  };
+
+  toggle.addEventListener('click', () => setOpen(!header.classList.contains('nav-open')));
+  nav.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('click', (e) => { if (!header.contains(e.target)) setOpen(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', (e) => { if (e.matches) setOpen(false); });
+})();
+
+/* Con content-visibility las secciones lejanas miden una altura estimada y el scroll suave a un enlace interno
+   terminaba antes de tiempo (p. ej. "Contacto" aterrizaba en Intereses). Al usar un enlace se muestran completas. */
+(function initAnchorJump() {
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (a && a.getAttribute('href').length > 1) document.documentElement.classList.add('cv-off');
+  }, true);
+})();
+
+
+/* ============================================================
    4.  SCROLL REVEAL
    ============================================================ */
 (function initScrollReveal() {

@@ -1879,7 +1879,7 @@ footer {
   .hero-content {
     flex-direction: column;
     text-align: center;
-    padding: 100px 0 0;
+    padding: 100px 24px 0;
     gap: 30px;
   }
   
@@ -1916,7 +1916,7 @@ footer {
   .nav-links { gap: 0; }
   .nav-links a { padding: 6px 10px; font-size: 0.82rem; }
 
-  .hero-content { padding: 100px 0 60px; }
+  .hero-content { padding: 100px 24px 60px; }
   .hero h1 { font-size: 2.2rem; }
 
   #sobre-mi .about-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -2140,6 +2140,8 @@ footer {
   content-visibility: auto;
   contain-intrinsic-size: auto 640px;
 }
+html.cv-off #trayectoria, html.cv-off #stack, html.cv-off #sobre-mi,
+html.cv-off #intereses, html.cv-off #contacto { content-visibility: visible; }
 
 /* Chrome no pinta background-clip:text en el padre cuando las palabras hijas llevan transform animado
    (la línea "eficiente y elegante." quedaba invisible). El degradado se aplica a cada palabra. */
@@ -2154,20 +2156,66 @@ footer {
   -webkit-text-fill-color: transparent;
 }
 
-/* Navegación en móvil: logo y botón de idioma arriba y los cinco enlaces completos debajo, sin que nada quede fuera de la pantalla. */
-@media (max-width: 640px) {
-  .nav-container { position: relative; flex-wrap: wrap; row-gap: 6px; padding: 12px 16px 8px; }
-  .nav-links { flex: 1 0 100%; order: 3; justify-content: space-between; gap: 0; }
-  .nav-links a { padding: 6px 4px; font-size: 0.8rem; white-space: nowrap; }
-  .nav-links .btn-lang { position: absolute; top: 10px; right: 16px; margin: 0; }
-  .hero-content { padding-top: 124px; }
+/* Botón del menú: solo existe en móvil. */
+.nav-toggle { display: none; }
+
+/* Navegación en móvil y tablet: barra compacta (logo + botón) y menú desplegable con todos los enlaces y el idioma. */
+@media (max-width: 900px) {
+  .nav-container { position: relative; padding: 12px 16px; }
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text-main);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  header.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  header.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 4px 16px 16px;
+    background: rgba(5, 1, 13, 0.97);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  }
+  header.nav-open .nav-links { display: flex; }
+  .nav-links a {
+    padding: 14px 8px;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+  }
+  .nav-links a::after { display: none; }
+  .nav-links .btn-lang { align-self: flex-start; margin: 14px 0 0; padding: 8px 18px; }
 }
 
-/* Pantallas muy angostas (320 px): enlaces algo más compactos para que quepan los cinco. */
-@media (max-width: 360px) {
-  .nav-container { padding: 12px 12px 8px; }
-  .nav-links a { padding: 6px 2px; font-size: 0.72rem; }
-  .nav-links .btn-lang { right: 12px; }
+@media (max-width: 640px) {
+  .contact-actions { flex-direction: column; }
+  .contact-actions a { width: 100%; justify-content: center; text-align: center; }
 }
 
 /* Usuario de WhatsApp en el footer (texto seleccionable de un clic, para copiarlo). */
