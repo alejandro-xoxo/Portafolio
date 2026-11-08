@@ -1044,8 +1044,12 @@ footer {
 
 .footer-links {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 24px;
   align-items: center;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .footer-links a {
@@ -2150,21 +2154,20 @@ footer {
   -webkit-text-fill-color: transparent;
 }
 
-/* Navegación en móvil: deslizable en vez de cortarse. */
+/* Navegación en móvil: logo y botón de idioma arriba y los cinco enlaces completos debajo, sin que nada quede fuera de la pantalla. */
 @media (max-width: 640px) {
-  .nav-container { gap: 12px; }
-  .nav-links {
-    flex: 1;
-    min-width: 0;
-    justify-content: flex-start;
-    overflow-x: auto;
-    gap: 18px;
-    scrollbar-width: none;
-    -webkit-mask-image: linear-gradient(to right, #000 86%, transparent);
-    mask-image: linear-gradient(to right, #000 86%, transparent);
-  }
-  .nav-links::-webkit-scrollbar { display: none; }
-  .nav-links a, .nav-links .btn-lang { flex: 0 0 auto; white-space: nowrap; }
+  .nav-container { position: relative; flex-wrap: wrap; row-gap: 6px; padding: 12px 16px 8px; }
+  .nav-links { flex: 1 0 100%; order: 3; justify-content: space-between; gap: 0; }
+  .nav-links a { padding: 6px 4px; font-size: 0.8rem; white-space: nowrap; }
+  .nav-links .btn-lang { position: absolute; top: 10px; right: 16px; margin: 0; }
+  .hero-content { padding-top: 124px; }
+}
+
+/* Pantallas muy angostas (320 px): enlaces algo más compactos para que quepan los cinco. */
+@media (max-width: 360px) {
+  .nav-container { padding: 12px 12px 8px; }
+  .nav-links a { padding: 6px 2px; font-size: 0.72rem; }
+  .nav-links .btn-lang { right: 12px; }
 }
 
 /* Usuario de WhatsApp en el footer (texto seleccionable de un clic, para copiarlo). */
