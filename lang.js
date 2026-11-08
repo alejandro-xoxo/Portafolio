@@ -33,13 +33,13 @@ window.translations = {
     tl_3_date: "Jun 2026",
     tl_3_role: "1.er puesto · Visual Agents Hackathon",
     tl_3_desc: "Campus Guardian AI: MVP de inclusión académica con visión artificial, construido en 6 horas junto a un equipo de 3 personas.",
-    tl_4_date: "Desde ene 2026",
-    tl_4_role: "Formación en desarrollo de software",
+    tl_4_date: "Ene – nov 2026",
+    tl_4_role: "Técnico en Desarrollo de Software",
     tl_4_desc: "Proyectos en Python, JavaScript, SQL y Java, y automatización con n8n y agentes de IA.",
     
     about_label: "Sobre mí",
     about_title: "Código limpio.<br>Soluciones reales.",
-    about_p1: "Soy <strong>Miguel Alejandro</strong>, <strong>Junior Full Stack Developer</strong> en formación continua. Construyo aplicaciones con Python, Java, SQL y JavaScript, y me interesan sobre todo el backend, la automatización de procesos y la integración de agentes de IA.",
+    about_p1: "Soy <strong>Miguel Alejandro</strong>, <strong>Full Stack Developer</strong>. Construyo aplicaciones con Python, Java, SQL y JavaScript, y me interesan sobre todo el backend, la automatización de procesos y la integración de agentes de IA.",
     about_p2: "Soy usuario entusiasta de <strong>Linux</strong> — mi entorno de desarrollo nativo. Automatizo flujos de trabajo, configuro el sistema a bajo nivel y optimizo cada herramienta para que el código fluya sin fricción.",
     about_bullet1: "Control de versiones estricto en cada proyecto",
     about_bullet2: "Código nativo antes de frameworks externos",
@@ -53,7 +53,7 @@ window.translations = {
     hero_w3: "eficiente",
     hero_w4: "y",
     hero_w5: "elegante.",
-    hero_desc: "<strong>Junior Full Stack Developer</strong> en Colombia. Construyo aplicaciones con <strong>Python, Java, SQL y JavaScript</strong> y automatizo procesos con <strong>n8n y agentes de IA</strong>.",
+    hero_desc: "<strong>Full Stack Developer</strong> en Colombia. Construyo aplicaciones con <strong>Python, Java, SQL y JavaScript</strong> y automatizo procesos con <strong>n8n y agentes de IA</strong>.",
     hero_btn_projects: "Ver proyectos",
     hero_btn_contact: "GitHub",
     
@@ -97,7 +97,7 @@ window.translations = {
     
     contact_label: "Contacto",
     contact_title: "¿Hablamos?",
-    contact_subtitle: "Estoy abierto a oportunidades como Junior Full Stack Developer y a colaborar en proyectos. Escríbeme y te respondo.",
+    contact_subtitle: "Estoy abierto a oportunidades como Full Stack Developer y a colaborar en proyectos. Escríbeme y te respondo.",
     contact_btn: "Escríbeme un correo",
     
     footer_copy: "© 2026 Miguel Alejandro. Todos los derechos reservados."
@@ -136,13 +136,13 @@ window.translations = {
     tl_3_date: "Jun 2026",
     tl_3_role: "1st place · Visual Agents Hackathon",
     tl_3_desc: "Campus Guardian AI: an academic-inclusion MVP with computer vision, built in 6 hours with a team of 3.",
-    tl_4_date: "Since Jan 2026",
-    tl_4_role: "Software development training",
+    tl_4_date: "Jan – Nov 2026",
+    tl_4_role: "Software Development Technician",
     tl_4_desc: "Projects in Python, JavaScript, SQL and Java, and automation with n8n and AI agents.",
     
     about_label: "About Me",
     about_title: "Clean code.<br>Real solutions.",
-    about_p1: "I'm <strong>Miguel Alejandro</strong>, a <strong>Junior Full Stack Developer</strong> who keeps learning. I build applications with Python, Java, SQL and JavaScript, and I'm especially interested in backend, process automation and AI agent integration.",
+    about_p1: "I'm <strong>Miguel Alejandro</strong>, a <strong>Full Stack Developer</strong>. I build applications with Python, Java, SQL and JavaScript, and I'm especially interested in backend, process automation and AI agent integration.",
     about_p2: "I am an enthusiastic <strong>Linux</strong> user — my native development environment. I automate workflows, configure the system at a low level, and optimize every tool so code flows without friction.",
     about_bullet1: "Strict version control in every project",
     about_bullet2: "Native code before external frameworks",
@@ -156,7 +156,7 @@ window.translations = {
     hero_w3: "efficient",
     hero_w4: "&",
     hero_w5: "elegant.",
-    hero_desc: "<strong>Junior Full Stack Developer</strong> based in Colombia. I build applications with <strong>Python, Java, SQL and JavaScript</strong> and automate processes with <strong>n8n and AI agents</strong>.",
+    hero_desc: "<strong>Full Stack Developer</strong> based in Colombia. I build applications with <strong>Python, Java, SQL and JavaScript</strong> and automate processes with <strong>n8n and AI agents</strong>.",
     hero_btn_projects: "View projects",
     hero_btn_contact: "GitHub",
     
@@ -200,7 +200,7 @@ window.translations = {
     
     contact_label: "Contact",
     contact_title: "Shall we talk?",
-    contact_subtitle: "I'm open to Junior Full Stack Developer roles and to collaborating on projects. Write to me and I'll get back to you.",
+    contact_subtitle: "I'm open to Full Stack Developer roles and to collaborating on projects. Write to me and I'll get back to you.",
     contact_btn: "Send me an email",
     
     footer_copy: "© 2026 Miguel Alejandro. All rights reserved."
