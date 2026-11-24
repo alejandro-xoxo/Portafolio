@@ -60,6 +60,11 @@ window.translations = {
     hero_btn_contact: "GitHub",
     
     
+    manifesto_label: "Manifiesto",
+    manifesto_title: "Lo que me mueve.",
+    vision_title: "Visión",
+    vision_text: "Mi propósito es utilizar el desarrollo de software como un motor de progreso y estabilidad. Aspiro a ser un <strong>arquitecto de soluciones</strong> cuyo trabajo trascienda el código, convirtiéndose en el medio definitivo para construir seguridad, crecimiento y bienestar para mi núcleo familiar y las personas que me rodean.",
+    mission_title: "Misión",
     mission_text: "No programo para impresionar, sino para <strong>entregar soluciones</strong>. La curiosidad por entender el funcionamiento de los sistemas desde su base me impulsa a resolver problemas reales creando proyectos desde cero. Asumo cada reto como una oportunidad para entregar software limpio, funcional y sin sobreingeniería, garantizando <em>calidad técnica y visual</em>.",
     
     stack_label: "Ecosistema",
@@ -165,6 +170,11 @@ window.translations = {
     hero_btn_contact: "GitHub",
     
     
+    manifesto_label: "Manifesto",
+    manifesto_title: "What drives me.",
+    vision_title: "Vision",
+    vision_text: "My purpose is to use software development as an engine of progress and stability. I aspire to be a <strong>solutions architect</strong> whose work transcends code, becoming the definitive medium to build security, growth, and well-being for my family and those around me.",
+    mission_title: "Mission",
     mission_text: "I don't program to impress, but to <strong>deliver solutions</strong>. The curiosity to understand how systems work from the ground up drives me to solve real problems by building projects from scratch. I take every challenge as an opportunity to deliver clean, functional software without overengineering, guaranteeing <em>technical and visual quality</em>.",
     
     stack_label: "Ecosystem",
