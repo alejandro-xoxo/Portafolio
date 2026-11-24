@@ -35,7 +35,7 @@ window.translations = {
     tl_3_date: "Jun 2026",
     tl_3_role: "1.er puesto · Visual Agents Hackathon",
     tl_3_desc: "Campus Guardian AI: MVP de inclusión académica con visión artificial, construido en 6 horas junto a un equipo de 3 personas.",
-    tl_4_date: "Ene – nov 2026",
+    tl_4_date: "Ene 2026 – feb 2027",
     tl_4_role: "Técnico en Desarrollo de Software",
     tl_4_desc: "Proyectos en Python, JavaScript, SQL y Java, y automatización con n8n y agentes de IA.",
     
@@ -140,7 +140,7 @@ window.translations = {
     tl_3_date: "Jun 2026",
     tl_3_role: "1st place · Visual Agents Hackathon",
     tl_3_desc: "Campus Guardian AI: an academic-inclusion MVP with computer vision, built in 6 hours with a team of 3.",
-    tl_4_date: "Jan – Nov 2026",
+    tl_4_date: "Jan 2026 – Feb 2027",
     tl_4_role: "Software Development Technician",
     tl_4_desc: "Projects in Python, JavaScript, SQL and Java, and automation with n8n and AI agents.",
     
