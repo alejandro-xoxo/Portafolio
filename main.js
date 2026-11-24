@@ -570,13 +570,13 @@
       link: 'https://github.com/alejandro-xoxo/little-horizons-erp'
     },
     {
-      icon: '🧠',
+      icon: '🐧',
       get title() { return t('proj_2_title'); },
       get desc()  { return t('proj_2_desc'); },
       get role()  { return t('proj_2_role'); },
       get key()   { return t('proj_2_key'); },
-      tags: ['Python', 'Three.js', 'SQLite', 'Circuit Breaker', 'Voz (ffmpeg / gTTS)'],
-      link: 'https://github.com/alejandro-xoxo/Milo'
+      tags: ['Arch Linux', 'Hyprland', 'Quickshell', 'QML', 'Bash', 'Python'],
+      link: 'https://github.com/alejandro-xoxo/Miarch'
     },
     {
       icon: '📅',
