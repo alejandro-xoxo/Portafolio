@@ -468,11 +468,26 @@
       btn.style.transform  = `translate(${dx}px, ${dy}px) scale(1.04)`;
     });
 
-    btn.addEventListener('mouseleave', () => {
+    const reset = () => {
       btn.style.transition = 'transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)';
       btn.style.transform  = 'translate(0, 0) scale(1)';
-    });
+    };
+    btn.addEventListener('mouseleave', reset);
+    btn.addEventListener('pointerleave', reset);
+    btn.addEventListener('pointercancel', reset);
+    btn.addEventListener('blur', reset);
+    // Al descargar o abrir otra pestaña el navegador no avisa que el cursor salió: se suelta el botón al hacer clic
+    btn.addEventListener('click', () => setTimeout(reset, 150));
   });
+
+  // Si la ventana pierde el foco (descarga, otra pestaña) el botón no puede quedar «agarrado»
+  const resetAll = () => btns.forEach((b) => {
+    b.style.transition = 'transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    b.style.transform  = 'translate(0, 0) scale(1)';
+  });
+  window.addEventListener('blur', resetAll);
+  document.addEventListener('visibilitychange', resetAll);
+  window.addEventListener('pageshow', resetAll);
 })();
 
 
